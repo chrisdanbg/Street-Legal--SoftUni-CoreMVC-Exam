@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StreetLegal.Models;
 
@@ -10,6 +11,13 @@ namespace StreetLegal.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly UserManager<ApplicationUser> userManager;
+
+        public HomeController(UserManager<ApplicationUser> userManager)
+        {
+            this.userManager = userManager;
+        }
+
         public IActionResult Index()
         {
             return View();

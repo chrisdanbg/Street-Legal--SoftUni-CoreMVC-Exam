@@ -22,5 +22,9 @@
     <Folder Include="Models\Enums\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Contracts\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\Admin\" />
   </ItemGroup>
 </Project>

@@ -7,6 +7,18 @@ namespace StreetLegal.Services
 {
     public class DriverRepository : IDriverRepository
     {
+        private readonly IUserRepository userRepository;
+
+        public DriverRepository(IUserRepository userRepository)
+        {
+            this.userRepository = userRepository;
+        }
+
+        public DriverRepository()
+        {
+            
+        }
+
         public void AssignBasicCar(int userId)
         {
             Driver userToAssign = userRepository.GetUserById(userId);
@@ -14,7 +26,7 @@ namespace StreetLegal.Services
             userToAssign.MainCar = GetStartingCar();
         }
 
-        private Car GetStartingCar()
+        public Car GetStartingCar()
         {
             Tyres startingTyres = new Tyres()
             {
@@ -34,5 +46,6 @@ namespace StreetLegal.Services
                 }
             };
         }
+
     }
 }

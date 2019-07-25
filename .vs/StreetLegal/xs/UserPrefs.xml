@@ -1,23 +1,19 @@
 ﻿<Properties StartupConfiguration="{CEB34EC4-4D9B-4EF9-AB4E-E4B7622B3A43}|Default">
   <MonoDevelop.Ide.ItemProperties.StreetLegal PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/DriverRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_LoginPartial.cshtml">
     <Files>
-      <File FileName="Controllers/HomeController.cs" Line="27" Column="10" />
-      <File FileName="Models/Driver.cs" Line="18" Column="16" />
-      <File FileName="Models/CarModels/Car.cs" Line="8" Column="31" />
-      <File FileName="Services/DriverRepository.cs" Line="8" Column="18" />
+      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StreetLegal" expanded="True">
             <Node name="StreetLegal" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="CarModels" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True">
-                <Node name="Contracts" expanded="True" />
-                <Node name="DriverRepository.cs" selected="True" />
+              <Node name="Areas" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True">
+                  <Node name="_LoginPartial.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
