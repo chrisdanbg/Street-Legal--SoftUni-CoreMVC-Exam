@@ -14,6 +14,9 @@ using StreetLegal.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StreetLegal.Models;
+using StreetLegal.Services.Contracts;
+using AutoMapper;
+using StreetLegal.Services;
 
 namespace StreetLegal
 {
@@ -37,6 +40,7 @@ namespace StreetLegal
             });
 
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
+            services.AddTransient<ICarService, CarService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -106,6 +110,7 @@ namespace StreetLegal
             app.UseMvc(routes =>
             {
                 routes.MapRoute("areaRoute", "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Admin}/{action=Create}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

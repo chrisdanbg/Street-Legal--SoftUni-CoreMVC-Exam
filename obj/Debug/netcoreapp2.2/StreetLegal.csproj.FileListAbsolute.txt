@@ -32,3 +32,5 @@
 /Users/kristiyan/Desktop/StreetLegal/obj/Debug/netcoreapp2.2/StreetLegal.pdb
 /Users/kristiyan/Desktop/StreetLegal/obj/Debug/netcoreapp2.2/StreetLegal.csproj.CopyComplete
 /Users/kristiyan/Desktop/StreetLegal/obj/Debug/netcoreapp2.2/Razor/Areas/Admin/Views/Admin/Index.g.cshtml.cs
+/Users/kristiyan/Desktop/StreetLegal/obj/Debug/netcoreapp2.2/Razor/Areas/Admin/Views/Admin/Create.g.cshtml.cs
+/Users/kristiyan/Desktop/StreetLegal/obj/Debug/netcoreapp2.2/Razor/Areas/Admin/Views/Engine/Create.g.cshtml.cs

@@ -1,19 +1,37 @@
 ﻿<Properties StartupConfiguration="{CEB34EC4-4D9B-4EF9-AB4E-E4B7622B3A43}|Default">
   <MonoDevelop.Ide.ItemProperties.StreetLegal PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_LoginPartial.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Admin/Views/Admin/Create.cshtml">
     <Files>
-      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="Services/CarService.cs" Line="30" Column="6" />
+      <File FileName="Startup.cs" Line="43" Column="53" />
+      <File FileName="Areas/Admin/Controllers/AdminController.cs" Line="1" Column="1" />
+      <File FileName="Areas/Admin/Views/Admin/Create.cshtml" Line="11" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StreetLegal" expanded="True">
             <Node name="StreetLegal" expanded="True">
-              <Node name="Areas" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True">
-                  <Node name="_LoginPartial.cshtml" selected="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Areas" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Admin" expanded="True">
+                      <Node name="Create.cshtml" selected="True" />
+                    </Node>
+                    <Node name="Engine" expanded="True" />
+                  </Node>
                 </Node>
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="CarModels" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -24,7 +42,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kristiyan/Desktop/StreetLegal/Services/CarService.cs" relfile="Services/CarService.cs" line="27" column="1" />
+      <Breakpoint file="/Users/kristiyan/Desktop/StreetLegal/Areas/Admin/Controllers/AdminController.cs" relfile="Areas/Admin/Controllers/AdminController.cs" line="48" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
