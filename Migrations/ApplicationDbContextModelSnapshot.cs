@@ -186,6 +186,63 @@ namespace StreetLegal.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("StreetLegal.Models.CarModels.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("EngineId");
+
+                    b.Property<string>("Make");
+
+                    b.Property<int?>("TyresId");
+
+                    b.Property<int>("Year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EngineId");
+
+                    b.HasIndex("TyresId");
+
+                    b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("StreetLegal.Models.CarModels.Engine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("HP");
+
+                    b.Property<int>("MaxSpeed");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Engines");
+                });
+
+            modelBuilder.Entity("StreetLegal.Models.CarModels.Tyres", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Health");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("tyreType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tyres");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -229,6 +286,17 @@ namespace StreetLegal.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("StreetLegal.Models.CarModels.Car", b =>
+                {
+                    b.HasOne("StreetLegal.Models.CarModels.Engine", "Engine")
+                        .WithMany()
+                        .HasForeignKey("EngineId");
+
+                    b.HasOne("StreetLegal.Models.CarModels.Tyres", "Tyres")
+                        .WithMany()
+                        .HasForeignKey("TyresId");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,1 +1,27 @@
-﻿<h1>This is admin page</h1>
+﻿@model StreetLegal.ViewModels.AdminViewModels.AdminIndexVM
+
+<h1>This is admin page</h1>
+
+
+<a asp-action="Create" asp-controller="Car" asp-area="Admin"><h1>Create Car</h1></a>
+<a asp-action="Create" asp-controller="Engine" asp-area="Admin"><h1>Create Engine</h1></a>
+<a asp-action="Create" asp-controller="Tyres" asp-area="Admin"><h1>Create Tyres</h1></a>
+
+
+<h1>Cars</h1>
+@foreach (var car in Model.Cars)
+{
+    <h5>@car.Make | @car.Year | @car.Engine.MaxSpeed Km/H</h5>
+}
+
+<h1>Engines</h1>
+@foreach (var engine in Model.Engines)
+{
+    <h5>@engine.Name | @engine.HP | @engine.MaxSpeed</h5>
+}
+
+<h1>Tyres</h1>
+@foreach (var tyres in Model.Tyres)
+{
+    <h5>@tyres.Name | @tyres.Health | @tyres.tyreType</h5>
+}

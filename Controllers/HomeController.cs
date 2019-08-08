@@ -18,8 +18,11 @@ namespace StreetLegal.Controllers
             this.userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+
+            var user = await userManager.FindByEmailAsync("admin@admin.com");
+            await userManager.AddToRoleAsync(user, "Admin");
             return View();
         }
 

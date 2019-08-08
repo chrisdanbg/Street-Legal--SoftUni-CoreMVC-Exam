@@ -1,7 +1,7 @@
 ﻿@model StreetLegal.ViewModels.AdminViewModels.CreateEngineVM
 
 @{
-    ViewData["Title"] = "Create New Car";
+    ViewData["Title"] = "Create New Engine";
 }
 
 <div class="text-center">
@@ -9,13 +9,21 @@
     <div class="text-left">
         <div class="text-left">
             <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="" class="control-label">Make <span class="text-danger">*</span></label>
-                    <input asp-for="Make" class="form-control" />
+                    <label asp-for="Name" class="control-label">Name <span class="text-danger">*</span></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Year" class="control-label">Year of Production <span class="text-danger">*</span></label>
-                    <input asp-for="Year" class="form-control" required />
+                    <label asp-for="HP" class="control-label">Horse Power <span class="text-danger">*</span></label>
+                    <input asp-for="HP" type="number" class="form-control" required />
+                    <span asp-validation-for="HP" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaxSpeed" class="control-label">Max Speed <span class="text-danger">*</span></label>
+                    <input asp-for="MaxSpeed" type="number" class="form-control" required />
+                    <span asp-validation-for="MaxSpeed" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-2">
                     <input type="submit" value="Create" class="btn btn-primary text-light float-left" />

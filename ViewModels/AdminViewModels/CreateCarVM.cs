@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using StreetLegal.Models.CarModels;
 
@@ -12,8 +13,8 @@ namespace StreetLegal.ViewModels.AdminViewModels
         [Required]
         public int Year { get; set; }
 
-        public Engine Engine { get; set; }
+        public int EngineId { get; set; }
 
-        public Tyres Tyres { get; set; }
+        public int TyresId { get; set; }
     }
 }
