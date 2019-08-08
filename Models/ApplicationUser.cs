@@ -9,6 +9,6 @@ namespace StreetLegal.Models
         {
         }
 
-        public string DriverName { get; set; }
+        public Driver Driver { get; set; }
     }
 }

@@ -32,9 +32,6 @@ namespace StreetLegal.Areas.Admin.Controllers
             AdminIndexVM adminIndexVM = this.carService.PopulateAdminIndexVM();
             return View(adminIndexVM);
         }
-
-
-
-        
+     
     }
 }

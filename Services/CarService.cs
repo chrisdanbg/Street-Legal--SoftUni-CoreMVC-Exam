@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using StreetLegal.Data;
 using StreetLegal.Models.CarModels;
 using StreetLegal.Services.Contracts;
@@ -96,6 +97,24 @@ namespace StreetLegal.Services
         {
             return this.context.Tyres.ToList();
 
+        }
+
+        public Car GetStartingCar()
+        {
+            var basicCarsToRandomize = this.context.Cars.AsQueryable();
+
+            List<Car> filteredCars = basicCarsToRandomize.Include(c => c.Engine).Include(c => c.Tyres).Where(c => c.Engine.MaxSpeed < 160).ToList();
+
+            if (!filteredCars.Any())
+            {
+                return null;
+            }
+
+            Random randomizer = new Random();
+
+            int r = randomizer.Next(filteredCars.Count);
+
+            return filteredCars[r];
         }
     }
 }

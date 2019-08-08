@@ -41,6 +41,8 @@ namespace StreetLegal
             });
 
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IDriverRepository, DriverRepository>();
             services.AddTransient<ICarService, CarService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>

@@ -1,0 +1,15 @@
+﻿@model StreetLegal.ViewModels.HomeViewModels.AssignedVM
+
+@{
+    ViewData["Title"] = "Assigned";
+}
+
+    <div class="text-center">
+        <h1>Congratulations Driver</h1>
+        <p>You've been accepted into Street Legal League</p>
+        <p>Here Is Your Info:</p>
+        <p>@Model.Car.Make | @Model.Car.Year | @Model.Car.Engine.HP</p>
+
+        <a asp-action="Assign" class="btn btn-success">Let's Race</a>
+    </div>
+

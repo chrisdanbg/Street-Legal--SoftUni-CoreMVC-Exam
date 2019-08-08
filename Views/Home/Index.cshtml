@@ -1,10 +1,14 @@
-﻿@{
+﻿@model StreetLegal.ViewModels.HomeViewModels.HomeIndexVM
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@if (User.Identity.IsAuthenticated && Model.Driver == null)
+{
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>Welcome to Street Legal</h1>
+    <p>As a new driver you need a car. Whould you like to get a car now ?</p>
+    <a asp-action="Assign" class="btn btn-primary">Give me a car!</a>
 </div>
-
-
+}

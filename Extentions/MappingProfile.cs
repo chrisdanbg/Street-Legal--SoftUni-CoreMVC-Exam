@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using StreetLegal.Models;
 using StreetLegal.Models.CarModels;
 using StreetLegal.ViewModels.AdminViewModels;
+using StreetLegal.ViewModels.HomeViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

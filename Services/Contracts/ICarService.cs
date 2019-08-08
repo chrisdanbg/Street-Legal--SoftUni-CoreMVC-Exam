@@ -15,5 +15,6 @@ namespace StreetLegal.Services.Contracts
         ICollection<Engine> GetAllEngines();
         Task<bool> CreateNewTyres(CreateTyresVM createTyres);
         ICollection<Tyres> GetAllTyres();
+        Car GetStartingCar();
     }
 }

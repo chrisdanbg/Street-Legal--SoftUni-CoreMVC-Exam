@@ -7,6 +7,8 @@ namespace StreetLegal.Models
 {
     public class Driver
     {
+        public int Id { get; set; }
+
         public Car MainCar { get; set; }
 
         public int Level { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\users\\applynx2\\desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {}
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {}
   },
   "projects": {
-    "C:\\users\\applynx2\\desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\users\\applynx2\\desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
         "projectName": "StreetLegal",
-        "projectPath": "C:\\users\\applynx2\\desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
         "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
-        "outputPath": "C:\\users\\applynx2\\desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\obj\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

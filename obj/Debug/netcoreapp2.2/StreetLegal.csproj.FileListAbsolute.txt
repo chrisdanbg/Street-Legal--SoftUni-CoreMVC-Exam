@@ -55,7 +55,6 @@ C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreap
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Engine\Create.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -78,3 +77,4 @@ C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreap
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Tyres\Create.g.cshtml.cs
 C:\users\applynx2\desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Car\Create.g.cshtml.cs
+C:\users\applynx2\desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Home\Assigned.g.cshtml.cs

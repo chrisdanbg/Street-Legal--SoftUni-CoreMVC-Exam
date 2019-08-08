@@ -23,5 +23,7 @@ namespace StreetLegal.Data
         public DbSet<Car> Cars { get; set; }
 
         public DbSet<Tyres> Tyres { get; set; }
+
+        public DbSet<Driver> Drivers { get; set; }
     }
 }

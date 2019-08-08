@@ -1,51 +1,64 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using StreetLegal.Data;
 using StreetLegal.Models;
 using StreetLegal.Models.CarModels;
 using StreetLegal.Services.Contracts;
+using StreetLegal.ViewModels.HomeViewModels;
 
 namespace StreetLegal.Services
 {
     public class DriverRepository : IDriverRepository
     {
+        private readonly ApplicationDbContext context;
         private readonly IUserRepository userRepository;
+        private readonly ICarService carService;
 
-        public DriverRepository(IUserRepository userRepository)
+        public DriverRepository(ApplicationDbContext context, IUserRepository userRepository, ICarService carService)
         {
+            this.context = context;
             this.userRepository = userRepository;
+            this.carService = carService;
         }
 
-        public DriverRepository()
+        public async Task<Car> AssignBasicCar()
         {
-            
+            return this.carService.GetStartingCar();
         }
 
-        public void AssignBasicCar(int userId)
+        public async Task<AssignedVM> SetupProfile(ApplicationUser user)
         {
-            Driver userToAssign = userRepository.GetUserById(userId);
-
-            userToAssign.MainCar = GetStartingCar();
-        }
-
-        public Car GetStartingCar()
-        {
-            Tyres startingTyres = new Tyres()
+            if (user.Driver != null)
             {
-                Health = 100
+                return null;
+            }
+            var firstCarToAssign = await AssignBasicCar();
+
+            user.Driver = new Driver()
+            {
+                MainCar = firstCarToAssign,
+                Experience = 0,
+                Garage = new List<Car>() { firstCarToAssign },
+                Level = 1,
+                Money = 0
             };
 
-            return new Car()
+            this.context.Update(user);
+
+            if (await this.context.SaveChangesAsync() > 0)
             {
-                Make = "Honda Civic",
-                Year = 1995,
-                Tyres = startingTyres,
-                Engine = new Engine()
+                var AssignedVMToReturn = new AssignedVM()
                 {
-                    HP = 110,
-                    MaxSpeed = 180,
-                    Name = "Fabric Honda"
-                }
-            };
-        }
+                    Car = firstCarToAssign,
+                    Driver = user.Driver
+                };
 
+                return AssignedVMToReturn;
+            }
+
+            return null;
+        }
     }
 }
