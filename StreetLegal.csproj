@@ -23,8 +23,6 @@
   <ItemGroup>
     <Folder Include="Models\CarModels\" />
     <Folder Include="Models\Enums\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Contracts\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="Areas\Admin\Views\Engine\" />
   </ItemGroup>

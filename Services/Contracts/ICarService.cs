@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using StreetLegal.Models;
 using StreetLegal.Models.CarModels;
 using StreetLegal.ViewModels.AdminViewModels;
 
@@ -16,5 +17,7 @@ namespace StreetLegal.Services.Contracts
         Task<bool> CreateNewTyres(CreateTyresVM createTyres);
         ICollection<Tyres> GetAllTyres();
         Car GetStartingCar();
+        Task<Car> GetCarById(int carId);
+        Task<Car> GetCarByMaxSpeed(int rivalMaxSpeed);
     }
 }

@@ -78,3 +78,4 @@ C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreap
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Tyres\Create.g.cshtml.cs
 C:\users\applynx2\desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Car\Create.g.cshtml.cs
 C:\users\applynx2\desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Home\Assigned.g.cshtml.cs
+C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Race\Start.g.cshtml.cs

@@ -44,6 +44,7 @@ namespace StreetLegal
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IDriverRepository, DriverRepository>();
             services.AddTransient<ICarService, CarService>();
+            services.AddTransient<IRaceRepository, RaceRepository>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

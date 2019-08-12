@@ -116,5 +116,15 @@ namespace StreetLegal.Services
 
             return filteredCars[r];
         }
+
+        public async Task<Car> GetCarById(int carId)
+        {
+            return await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).FirstOrDefaultAsync(c => c.Id == carId);
+        }
+
+        public async Task<Car> GetCarByMaxSpeed(int rivalMaxSpeed)
+        {
+            return await this.context.Cars.Where(c => c.Engine.MaxSpeed == rivalMaxSpeed).Include(c => c.Engine).Include(c => c.Tyres).FirstOrDefaultAsync();
+        }
     }
 }

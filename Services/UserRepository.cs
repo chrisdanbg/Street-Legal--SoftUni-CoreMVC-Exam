@@ -22,7 +22,10 @@ namespace StreetLegal.Services
 
         public HomeIndexVM GetDriverProfile(ApplicationUser user)
         {
-            var userToGetDriverFrom = this.context.Users.Include(u => u.Driver).FirstOrDefault(u => u.Id == user.Id);
+            var userToGetDriverFrom = this.context.Users.Include(u => u.Driver).ThenInclude(d => d.Garage)
+                .Include(u => u.Driver)
+                .ThenInclude(d => d.MainCar)
+                .FirstOrDefault(u => u.Id == user.Id);
 
             Driver driverToReturn = userToGetDriverFrom.Driver;
 
