@@ -20,6 +20,7 @@ namespace StreetLegal.Services
             this.userRepository = userRepository;
             this.carService = carService;
         }
+
         public async Task<bool> Race(ApplicationUser user)
         {
             var currentDriver = this.userRepository.GetDriverProfile(user);
