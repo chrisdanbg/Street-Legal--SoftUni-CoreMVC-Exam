@@ -13,11 +13,13 @@ namespace StreetLegal.Controllers
     {
         private readonly IRaceRepository raceRepository;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IUserRepository userRepository;
 
-        public RaceController(IRaceRepository raceRepository, UserManager<ApplicationUser> userManager)
+        public RaceController(IRaceRepository raceRepository, UserManager<ApplicationUser> userManager, IUserRepository userRepository)
         {
             this.raceRepository = raceRepository;
             this.userManager = userManager;
+            this.userRepository = userRepository;
         }
         public IActionResult Start()
         {
@@ -27,8 +29,13 @@ namespace StreetLegal.Controllers
         public async Task<IActionResult> Finish()
         {
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
-            this.raceRepository.Race(currentUser);
-
+            if (await this.raceRepository.Race(currentUser))
+            {
+                if (await this.userRepository.RewardUser(currentUser))
+                {
+                    return View("Win");
+                }
+            }
 
             return View();
         }

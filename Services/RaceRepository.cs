@@ -71,7 +71,7 @@ namespace StreetLegal.Services
 
             Random rnd = new Random();
             var rivalLevel = rnd.Next(currentUserLevel);
-            var rivalMaxSpeed = rnd.Next(userCarMaxSpeed + 20);
+            var rivalMaxSpeed = rnd.Next(userCarMaxSpeed, userCarMaxSpeed + 5);
 
             Car rivalCar = await this.carService.GetCarByMaxSpeed(rivalMaxSpeed);
 
