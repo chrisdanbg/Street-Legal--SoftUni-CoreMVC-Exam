@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StreetLegal.Models;
 using StreetLegal.Services.Contracts;
+using StreetLegal.ViewModels.RaceViewModels;
 
 namespace StreetLegal.Controllers
 {
@@ -28,16 +29,45 @@ namespace StreetLegal.Controllers
 
         public async Task<IActionResult> Finish()
         {
+            string userName = HttpContext.User.Identity.Name;
+
+            if (userName == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+            if (currentUser == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+
             if (await this.raceRepository.Race(currentUser))
             {
-                if (await this.userRepository.RewardUser(currentUser))
+                int currentUserLevel = this.userRepository.GetDriverLevel(currentUser);
+
+                RaceWinVM raceWinVM = await this.userRepository.RewardUser(currentUser);
+
+                if (raceWinVM.Level > currentUserLevel)
                 {
-                    return View("Win");
+                    return RedirectToAction(nameof(LevelUp), raceWinVM);
                 }
+
+                return RedirectToAction(nameof(Win), raceWinVM);
             }
 
             return View();
+        }
+
+        public IActionResult LevelUp(RaceWinVM raceWinVM)
+        {
+            return View(raceWinVM);
+        }
+
+        public IActionResult Win(RaceWinVM raceWinVM)
+        {
+            return View(raceWinVM);
         }
     }
 }

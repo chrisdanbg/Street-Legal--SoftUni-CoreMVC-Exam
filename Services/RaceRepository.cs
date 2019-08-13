@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-using StreetLegal.Models;
+﻿using StreetLegal.Models;
 using StreetLegal.Models.CarModels;
 using StreetLegal.Services.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace StreetLegal.Services
@@ -64,14 +61,11 @@ namespace StreetLegal.Services
         {
             int currentUserLevel = userDriver.Level;
 
-            var userCarMaxSpeed = userCar.Engine.MaxSpeed;
-            var userCarHP = userCar.Engine.HP;
-            var userCarTyresHealth = userCar.Tyres.Health;
-
+            int userCarMaxSpeed = userCar.Engine.MaxSpeed;
 
             Random rnd = new Random();
-            var rivalLevel = rnd.Next(currentUserLevel);
-            var rivalMaxSpeed = rnd.Next(userCarMaxSpeed, userCarMaxSpeed + 5);
+            int rivalLevel = rnd.Next(currentUserLevel);
+            int rivalMaxSpeed = rnd.Next(userCarMaxSpeed, userCarMaxSpeed + 5);
 
             Car rivalCar = await this.carService.GetCarByMaxSpeed(rivalMaxSpeed);
 

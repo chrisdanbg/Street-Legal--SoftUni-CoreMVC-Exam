@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using StreetLegal.Models;
 using StreetLegal.ViewModels.HomeViewModels;
+using StreetLegal.ViewModels.RaceViewModels;
 
 namespace StreetLegal.Services.Contracts
 {
@@ -9,6 +10,7 @@ namespace StreetLegal.Services.Contracts
     {
         Driver GetDriverById(int userId);
         HomeIndexVM GetDriverProfile(ApplicationUser user);
-        Task<bool> RewardUser(ApplicationUser user);
+        Task<RaceWinVM> RewardUser(ApplicationUser user);
+        int GetDriverLevel(ApplicationUser applicationUser);
     }
 }

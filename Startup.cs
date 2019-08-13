@@ -48,7 +48,7 @@ namespace StreetLegal
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnectionWin")));
+                    Configuration.GetConnectionString("DefaultConnectionMac")));
 
             services.AddDefaultIdentity<ApplicationUser>()
                .AddDefaultUI(UIFramework.Bootstrap4)

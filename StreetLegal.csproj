@@ -25,6 +25,7 @@
     <Folder Include="Models\Enums\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="Areas\Admin\Views\Engine\" />
+    <Folder Include="ViewModels\RaceViewModels\" />
   </ItemGroup>
 
   <ItemGroup>

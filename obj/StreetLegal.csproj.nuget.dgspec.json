@@ -1,37 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {}
+    "/Users/kristiyan/Desktop/StreetLegal/StreetLegal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj": {
+    "/Users/kristiyan/Desktop/StreetLegal/StreetLegal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
+        "projectUniqueName": "/Users/kristiyan/Desktop/StreetLegal/StreetLegal.csproj",
         "projectName": "StreetLegal",
-        "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.csproj",
-        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\obj\\",
+        "projectPath": "/Users/kristiyan/Desktop/StreetLegal/StreetLegal.csproj",
+        "packagesPath": "/Users/kristiyan/.nuget/packages/",
+        "outputPath": "/Users/kristiyan/Desktop/StreetLegal/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kristiyan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
-          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -7,15 +7,15 @@ using StreetLegal.Data;
 using StreetLegal.Models;
 using StreetLegal.Services.Contracts;
 using StreetLegal.ViewModels.HomeViewModels;
+using StreetLegal.ViewModels.RaceViewModels;
 
 namespace StreetLegal.Services
 {
     public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext context;
-        private readonly IMapper mapper;
 
-        public UserRepository(ApplicationDbContext context, IMapper mapper)
+        public UserRepository(ApplicationDbContext context)
         {
             this.context = context;
             this.mapper = mapper;
@@ -41,34 +41,41 @@ namespace StreetLegal.Services
             return this.context.Drivers.FirstOrDefault(d => d.Id == userId);
         }
 
-        public async Task<bool> RewardUser(ApplicationUser applicationUser)
+        public async Task<RaceWinVM> RewardUser(ApplicationUser applicationUser)
         {
-            var driver  = GetDriverProfile(applicationUser).Driver;
+            Driver driver  = GetDriverProfile(applicationUser).Driver;
 
-            var userLevel = driver.Level;
-            var userExperience = driver.Experience;
+            int userLevel = driver.Level;
 
-            var rnd = new Random();
+            Random rnd = new Random();
 
-            var awardPoints = 3 * userLevel;
-            var awardMoney = rnd.Next(100, 1000) * userLevel;
+            int awardPoints = 3 * userLevel;
+            int awardMoney = rnd.Next(100, 1000) * userLevel;
+
+            int awardLevel = driver.Level;
 
             if (UserCanLevelUp(applicationUser,awardPoints))
             {
-                await LevelUp(applicationUser, awardPoints);
-                return true;
+                awardLevel = await LevelUp(applicationUser);
             }
 
             await AwardExperience(applicationUser, awardPoints);
             await AwardMoney(applicationUser, awardMoney);
-             
-            return false;
+
+
+
+            return new RaceWinVM()
+            {
+                ExperienceEarned = awardPoints,
+                MoneyEarned = awardMoney,
+                Level = awardLevel
+            };
         }
 
         private async Task AwardMoney(ApplicationUser applicationUser, int awardMoney)
         {
             var driver = GetDriverProfile(applicationUser).Driver;
-            driver.Money = awardMoney;
+            driver.Money += awardMoney;
             applicationUser.Driver = driver;
 
             this.context.Update(applicationUser);
@@ -88,7 +95,7 @@ namespace StreetLegal.Services
             await this.context.SaveChangesAsync();
         }
 
-        private async Task LevelUp(ApplicationUser applicationUser, int awardPoints)
+        private async Task<int> LevelUp(ApplicationUser applicationUser)
         {
             var driver = GetDriverProfile(applicationUser).Driver;
 
@@ -100,18 +107,25 @@ namespace StreetLegal.Services
 
             await this.context.SaveChangesAsync();
 
+            return driver.Level;
+
         }
 
         private bool UserCanLevelUp(ApplicationUser applicationUser, int awardPoints)
         {
-            var driver = GetDriverProfile(applicationUser).Driver;
+            Driver driver = GetDriverProfile(applicationUser).Driver;
 
-            var userLevel = driver.Level;
-            var userExperience = driver.Experience;
+            int userLevel = driver.Level;
+            int userExperience = driver.Experience;
 
             int pointsNeededForLevelUp = userLevel * 50;
 
             return (userExperience + awardPoints) >= pointsNeededForLevelUp;
+        }
+
+        public int GetDriverLevel(ApplicationUser applicationUser)
+        {
+            return GetDriverProfile(applicationUser).Driver.Level;
         }
     }
 }

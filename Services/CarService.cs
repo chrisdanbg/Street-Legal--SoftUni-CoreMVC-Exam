@@ -124,7 +124,7 @@ namespace StreetLegal.Services
 
         public async Task<Car> GetCarByMaxSpeed(int rivalMaxSpeed)
         {
-            var car = await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).Where(c => c.Engine.MaxSpeed < rivalMaxSpeed).FirstOrDefaultAsync();
+            var car = await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).Where(c => c.Engine.MaxSpeed <= rivalMaxSpeed).FirstOrDefaultAsync();
             return car;
         }
     }
