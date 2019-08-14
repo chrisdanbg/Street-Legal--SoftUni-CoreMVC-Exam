@@ -1,0 +1,27 @@
+﻿@model  StreetLegal.ViewModels.GarageViewModels.GarageIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="text-center">
+        <h1>Welcome to your garage</h1>
+        <h5>You currently have @Model.CarsCount cars in it. Check them out:</h5>
+    </div>
+
+    <div class="container">
+        @foreach (var item in Model.Cars)
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Make</h5>
+                    <h5 class="card-title">Year of production: @item.Year</h5>
+                    <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
+                    <p class="card-text">Max Speed: @item.Engine.HP</p>
+                    <a href="#" class="btn btn-primary">Make Main</a>
+                    <a asp-controller="Upgrade" asp-action="Car" asp-route-id="@item.Id" class="btn btn-warning">Upgrade</a>
+                </div>
+            </div>
+        }
+    </div>
+
+

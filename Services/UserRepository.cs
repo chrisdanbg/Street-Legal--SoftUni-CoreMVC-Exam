@@ -18,7 +18,6 @@ namespace StreetLegal.Services
         public UserRepository(ApplicationDbContext context)
         {
             this.context = context;
-            this.mapper = mapper;
         }
 
         public HomeIndexVM GetDriverProfile(ApplicationUser user)

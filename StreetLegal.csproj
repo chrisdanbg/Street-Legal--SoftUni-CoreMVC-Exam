@@ -6,6 +6,11 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20190814142711_fixedAppUser.cs" />
+    <Compile Remove="Migrations\20190814142711_fixedAppUser.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" />

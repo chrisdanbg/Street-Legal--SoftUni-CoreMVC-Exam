@@ -45,10 +45,11 @@ namespace StreetLegal
             services.AddTransient<IDriverRepository, DriverRepository>();
             services.AddTransient<ICarService, CarService>();
             services.AddTransient<IRaceRepository, RaceRepository>();
+            services.AddTransient<IGarageRepository, GarageRepository>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnectionMac")));
+                    Configuration.GetConnectionString("DefaultConnectionWin")));
 
             services.AddDefaultIdentity<ApplicationUser>()
                .AddDefaultUI(UIFramework.Bootstrap4)
@@ -129,7 +130,7 @@ namespace StreetLegal
                     template: "{controller=Home}/{action=Index}/{id?}");
                 });
 
-            CreateUserRoles(services).Wait();
+            //CreateUserRoles(services).Wait();
         }
 
         private async Task CreateUserRoles(IServiceProvider serviceProvider)

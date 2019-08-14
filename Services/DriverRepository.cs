@@ -36,11 +36,18 @@ namespace StreetLegal.Services
             }
             var firstCarToAssign = await AssignBasicCar();
 
+            Garage userGarage = new Garage()
+            {
+                Cars = new List<Car>() { firstCarToAssign },
+                UserId = user.Id
+            };
+
+
             user.Driver = new Driver()
             {
                 MainCar = firstCarToAssign,
                 Experience = 0,
-                Garage = new List<Car>() { firstCarToAssign },
+                Garage = userGarage,
                 Level = 1,
                 Money = 0
             };

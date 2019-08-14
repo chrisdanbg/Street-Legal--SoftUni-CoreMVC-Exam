@@ -17,6 +17,6 @@ namespace StreetLegal.Models
 
         public int Money { get; set; }
 
-        public ICollection<Car> Garage { get; set; }
+        public Garage Garage { get; set; }
     }
 }
