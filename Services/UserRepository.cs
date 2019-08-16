@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using StreetLegal.Data;
 using StreetLegal.Models;
+using StreetLegal.Models.CarModels;
 using StreetLegal.Services.Contracts;
 using StreetLegal.ViewModels.HomeViewModels;
 using StreetLegal.ViewModels.RaceViewModels;
@@ -14,10 +16,12 @@ namespace StreetLegal.Services
     public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext context;
+        private readonly IGarageRepository garageRepository;
 
-        public UserRepository(ApplicationDbContext context)
+        public UserRepository(ApplicationDbContext context, IGarageRepository garageRepository)
         {
             this.context = context;
+            this.garageRepository = garageRepository;
         }
 
         public HomeIndexVM GetDriverProfile(ApplicationUser user)
@@ -27,7 +31,10 @@ namespace StreetLegal.Services
                 .ThenInclude(d => d.MainCar)
                 .FirstOrDefault(u => u.Id == user.Id);
 
+            var cars = this.garageRepository.GetCarsForUser(user).GetAwaiter().GetResult();
+
             Driver driverToReturn = userToGetDriverFrom.Driver;
+            driverToReturn.Garage.Cars = cars;
 
             return new HomeIndexVM()
             {
@@ -126,5 +133,12 @@ namespace StreetLegal.Services
         {
             return GetDriverProfile(applicationUser).Driver.Level;
         }
+
+        public bool HasMainCar(ApplicationUser currentUser)
+        {
+            return GetDriverProfile(currentUser).Driver.MainCar == null;
+        }
+
+     
     }
 }

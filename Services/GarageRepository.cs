@@ -14,12 +14,17 @@ namespace StreetLegal.Services
     public class GarageRepository : IGarageRepository
     {
         private readonly ApplicationDbContext context;
-        private readonly IUserRepository userRepository;
 
-        public GarageRepository(ApplicationDbContext context, IUserRepository userRepository)
+        public GarageRepository(ApplicationDbContext context)
         {
             this.context = context;
-            this.userRepository = userRepository;
+        }
+
+        public async Task<ICollection<Car>> GetCarsForUser(ApplicationUser user)
+        {
+            var garage = await GetGarageForUser(user);
+
+            return garage.Cars;
         }
 
         public async Task<GarageIndexVM> GetGarageForUser(ApplicationUser currentUser)

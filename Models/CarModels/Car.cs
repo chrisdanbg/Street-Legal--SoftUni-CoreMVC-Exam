@@ -13,5 +13,7 @@ namespace StreetLegal.Models.CarModels
 
             public Tyres Tyres { get; set; }
 
+            public int Value { get; set; }
+
     }
 }

@@ -1,0 +1,45 @@
+﻿@model StreetLegal.ViewModels.ShopViewModels.ShopIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center mb-5">
+    <h1>Welcome to the Car Shop</h1>
+    <h5>Use your money to purchase new vehicles</h5>
+</div>
+
+<div class="container">
+    <h5>Available to purchase:</h5>
+    <div class="row">
+        @foreach (var item in Model.CarsToPurchase.Cars)
+        {
+            <div class="card mr-2" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Make</h5>
+                    <h5 class="card-title">Year of production: @item.Year</h5>
+                    <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
+                    <p class="card-text">Max Speed: @item.Engine.HP</p>
+                    <a asp-controller="Shop" asp-action="Purchase" asp-route-id="@item.Id" class="btn btn-danger">Purchase</a>
+                </div>
+            </div>
+        }
+    </div>
+    <hr />
+    <h5>Already purchased</h5>
+    <div class="row">
+        @foreach (var item in Model.CarsOwned.OwnedCars)
+        {
+            <div class="card mr-2" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Make</h5>
+                    <h5 class="card-title">Year of production: @item.Year</h5>
+                    <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
+                    <p class="card-text">Max Speed: @item.Engine.HP</p>
+                    <a asp-controller="Upgrade" asp-action="Car" asp-route-id="@item.Id" class="btn btn-warning">Upgrade</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

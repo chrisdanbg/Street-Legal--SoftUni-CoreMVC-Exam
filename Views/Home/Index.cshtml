@@ -17,7 +17,7 @@ else
     <h2>Your Level is - @Model.Driver.Level</h2>
     <h2>Your Experience is - @Model.Driver.Experience</h2>
     <h2>You have @Model.Driver.Money$ available</h2>
-    <h2>Your garage has @Model.Driver.Garage.Cars.Count cars in it</h2>
+    <h2>Your garage has @(Model.Driver.Garage.Cars != null ? Model.Driver.Garage.Cars.Count : 0 ) cars in it</h2>
 
     <a class="btn btn-primary" asp-action="Start" asp-controller="Race">Race</a>
     <a class="btn btn-warning" asp-action="Start" asp-controller="Race">Upgrade Car</a>

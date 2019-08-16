@@ -22,8 +22,28 @@ namespace StreetLegal.Controllers
             this.userManager = userManager;
             this.userRepository = userRepository;
         }
-        public IActionResult Start()
+        public async Task<IActionResult> Start()
         {
+
+            string userName = HttpContext.User.Identity.Name;
+
+            if (userName == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+
+            var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+            if (currentUser == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+
+            if(this.userRepository.HasMainCar(currentUser))
+            {
+                return RedirectToAction(nameof(GarageController.Index), "Garage");
+            }
+
             return View();
         }
 

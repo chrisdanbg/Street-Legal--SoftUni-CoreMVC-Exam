@@ -20,6 +20,10 @@
                     <input asp-for="Year" class="form-control" required />
                 </div>
                 <div class="form-group">
+                    <label asp-for="Value" class="control-label">Price <span class="text-danger">*</span></label>
+                    <input asp-for="Value" class="form-control" required />
+                </div>
+                <div class="form-group">
                     <label asp-for="EngineId">Engine<span class="text-danger">*</span></label>
                     <select asp-for="EngineId" asp-items="ViewBag.Engines" class="form-control">
                         <option selected>Choose...</option>

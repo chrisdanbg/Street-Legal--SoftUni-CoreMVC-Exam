@@ -12,5 +12,6 @@ namespace StreetLegal.Services.Contracts
         HomeIndexVM GetDriverProfile(ApplicationUser user);
         Task<RaceWinVM> RewardUser(ApplicationUser user);
         int GetDriverLevel(ApplicationUser applicationUser);
+        bool HasMainCar(ApplicationUser currentUser);
     }
 }

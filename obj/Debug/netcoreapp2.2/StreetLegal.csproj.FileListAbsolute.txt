@@ -95,3 +95,4 @@ C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreap
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\StreetLegal.csproj.CopyComplete
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\StreetLegal.csprojAssemblyReference.cache
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Garage\Index.g.cshtml.cs
+C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Index.g.cshtml.cs

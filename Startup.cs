@@ -18,6 +18,7 @@ using StreetLegal.Services.Contracts;
 using AutoMapper;
 using StreetLegal.Services;
 using StreetLegal.Extentions;
+using StreetLegal.Helpers;
 
 namespace StreetLegal
 {
@@ -40,12 +41,15 @@ namespace StreetLegal
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<ErrorMessageHelper>();
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IDriverRepository, DriverRepository>();
             services.AddTransient<ICarService, CarService>();
             services.AddTransient<IRaceRepository, RaceRepository>();
             services.AddTransient<IGarageRepository, GarageRepository>();
+            services.AddTransient<IShopRepository, ShopRepository>();
+
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -130,7 +134,7 @@ namespace StreetLegal
                     template: "{controller=Home}/{action=Index}/{id?}");
                 });
 
-            //CreateUserRoles(services).Wait();
+            CreateUserRoles(services).Wait();
         }
 
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
