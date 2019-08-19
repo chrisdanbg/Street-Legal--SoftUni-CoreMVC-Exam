@@ -1,0 +1,42 @@
+﻿@model StreetLegal.ViewModels.UpgradeViewModels.PartsIndexVM
+@{
+    ViewData["Title"] = "Upgrade Car";
+}
+
+<div class="text-center mb-5">
+    <h1>Welcome to the Car Shop</h1>
+    <h5>Use your money to purchase new vehicles</h5>
+</div>
+
+<div class="container">
+    <h5>Available to purchase:</h5>
+    <div class="row">
+        @foreach (var item in Model.PartsAvailable)
+        {
+            <div class="card mr-2" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <h5 class="card-title">Price @item.Price</h5>
+                    <p class="card-text">Bonus Points: @item.BonusPoints</p>
+                    <a asp-controller="Upgrade" asp-action="Purchase" asp-route-id="@item.Id" class="btn btn-danger">Purchase</a>
+                </div>
+            </div>
+        }
+    </div>
+    <hr />
+    <h5>Already purchased</h5>
+    <div class="row">
+        @foreach (var item in Model.PartsOwned)
+        {
+            <div class="card mr-2" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <h5 class="card-title">Price @item.Price</h5>
+                    <p class="card-text">Bonus Points: @item.BonusPoints</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

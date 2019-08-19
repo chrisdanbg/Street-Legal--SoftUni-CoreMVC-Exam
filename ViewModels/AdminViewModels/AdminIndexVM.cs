@@ -1,4 +1,5 @@
-﻿using StreetLegal.Models.CarModels;
+﻿using StreetLegal.Models;
+using StreetLegal.Models.CarModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace StreetLegal.ViewModels.AdminViewModels
         public ICollection<Engine> Engines { get; set; }
         public ICollection<Car> Cars { get; set; }
         public ICollection<Tyres> Tyres { get; set; }
+        public ICollection<Part> Parts { get; set; }
     }
 }

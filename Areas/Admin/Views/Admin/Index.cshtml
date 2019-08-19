@@ -10,6 +10,7 @@
 <a asp-action="Create" asp-controller="Car" asp-area="Admin"><h1>Create Car</h1></a>
 <a asp-action="Create" asp-controller="Engine" asp-area="Admin"><h1>Create Engine</h1></a>
 <a asp-action="Create" asp-controller="Tyres" asp-area="Admin"><h1>Create Tyres</h1></a>
+<a asp-action="Create" asp-controller="Parts" asp-area="Admin"><h1>Create Parts</h1></a>
 
 
 <h1>Cars</h1>
@@ -28,4 +29,10 @@
 @foreach (var tyres in Model.Tyres)
 {
     <h5>@tyres.Name | @tyres.Health | @tyres.tyreType</h5>
+}
+
+<h1>Parts</h1>
+@foreach (var tyres in Model.Parts)
+{
+    <h5>@tyres.Name | @tyres.BonusPoints</h5>
 }

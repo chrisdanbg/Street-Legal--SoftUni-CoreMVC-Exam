@@ -11,6 +11,8 @@ namespace StreetLegal.Helpers
 
         public string NotEnoughFundsMessage { get; } = "Insufficient funds!";
         public object SaveChangesErrorMessage { get; } = "Error Saving Changes";
+
+        public object SaveChangesSuccsessMessage { get; } = "Changes Saved!";
         public object SoldMessage { get; } = "Car Sold";
     }
 }

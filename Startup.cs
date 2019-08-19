@@ -49,7 +49,7 @@ namespace StreetLegal
             services.AddTransient<IRaceRepository, RaceRepository>();
             services.AddTransient<IGarageRepository, GarageRepository>();
             services.AddTransient<IShopRepository, ShopRepository>();
-
+            services.AddTransient<IUpgradeRepository, UpgradeRepository>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

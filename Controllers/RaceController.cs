@@ -39,7 +39,7 @@ namespace StreetLegal.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
-            if(this.userRepository.HasMainCar(currentUser))
+            if(!this.userRepository.HasMainCar(currentUser))
             {
                 return RedirectToAction(nameof(GarageController.Index), "Garage");
             }

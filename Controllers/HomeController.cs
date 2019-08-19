@@ -52,7 +52,6 @@ namespace StreetLegal.Controllers
 
         public async Task<IActionResult> Assigned(AssignedVM assignedVM)
         {
-
             var user = await this.userManager.GetUserAsync(User);
             if (user.Driver != null)
             {

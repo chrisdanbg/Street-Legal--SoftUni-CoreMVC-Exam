@@ -44,9 +44,17 @@ namespace StreetLegal.Services
             int rivalLuckyNumber = rnd.Next(7);
             int userLuckyNumber = rnd.Next(7);
 
+            int userPartsBonus = 0;
+
+            foreach (var item in driver.MainCar.Parts)
+            {
+                userPartsBonus += item.BonusPoints;
+            }
+
             int userStats = driver.Level + driver.MainCar.Engine.HP 
                             + driver.MainCar.Engine.MaxSpeed 
-                            + driver.MainCar.Tyres.Health 
+                            + driver.MainCar.Tyres.Health
+                            + userPartsBonus
                             + userLuckyNumber;
 
             int rivalStats = rival.Level + rival.MainCar.Engine.HP

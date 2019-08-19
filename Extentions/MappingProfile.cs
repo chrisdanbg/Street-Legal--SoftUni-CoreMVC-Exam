@@ -22,6 +22,9 @@ namespace StreetLegal.Extentions
 
             CreateMap<CreateTyresVM, Tyres>();
             CreateMap<Tyres, CreateTyresVM>();
+
+            CreateMap<CreatePartVM, Part>();
+            CreateMap<Part, CreatePartVM>();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace StreetLegal.Models.CarModels
 {
     public class Car
@@ -14,6 +16,8 @@ namespace StreetLegal.Models.CarModels
             public Tyres Tyres { get; set; }
 
             public int Value { get; set; }
+            
+            public ICollection<Part> Parts { get; set; }
 
     }
 }

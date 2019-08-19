@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using StreetLegal.Data;
+using StreetLegal.Models;
 using StreetLegal.Models.CarModels;
 using StreetLegal.Services.Contracts;
 using StreetLegal.ViewModels.AdminViewModels;
@@ -75,8 +76,14 @@ namespace StreetLegal.Services
             {
                 Cars = GetAllCars(),
                 Engines = GetAllEngines(),
-                Tyres = GetAllTyres()
+                Tyres = GetAllTyres(),
+                Parts = GetAllParts()
             };
+        }
+
+        private ICollection<Part> GetAllParts()
+        {
+            return this.context.Parts.ToList();
         }
 
         public async Task<bool> CreateNewTyres(CreateTyresVM createTyres)
@@ -119,13 +126,27 @@ namespace StreetLegal.Services
 
         public async Task<Car> GetCarById(int carId)
         {
-            return await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).FirstOrDefaultAsync(c => c.Id == carId);
+            return await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).Include(c => c.Parts).FirstOrDefaultAsync(c => c.Id == carId);
         }
 
         public async Task<Car> GetCarByMaxSpeed(int rivalMaxSpeed)
         {
             var car = await this.context.Cars.Include(c => c.Engine).Include(c => c.Tyres).Where(c => c.Engine.MaxSpeed <= rivalMaxSpeed).FirstOrDefaultAsync();
             return car;
+        }
+
+        public async Task<bool> CreateNewPart(CreatePartVM createPartVM)
+        {
+            var partToCreate = this.mapper.Map<Part>(createPartVM);
+
+            await this.context.AddAsync(partToCreate);
+
+            if (await this.context.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+
+            return true;
         }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StreetLegal.Data;
 
 namespace StreetLegal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190819134409_PartsAdded")]
+    partial class PartsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -299,17 +301,11 @@ namespace StreetLegal.Migrations
 
                     b.Property<int?>("CarId");
 
-                    b.Property<int?>("DriverId");
-
                     b.Property<string>("Name");
-
-                    b.Property<int>("Price");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CarId");
-
-                    b.HasIndex("DriverId");
 
                     b.ToTable("Parts");
                 });
@@ -397,10 +393,6 @@ namespace StreetLegal.Migrations
                     b.HasOne("StreetLegal.Models.CarModels.Car")
                         .WithMany("Parts")
                         .HasForeignKey("CarId");
-
-                    b.HasOne("StreetLegal.Models.Driver")
-                        .WithMany("Parts")
-                        .HasForeignKey("DriverId");
                 });
 #pragma warning restore 612, 618
         }

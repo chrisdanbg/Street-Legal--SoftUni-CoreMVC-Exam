@@ -17,8 +17,9 @@
                         <h5 class="card-title">@item.Make</h5>
                         <h5 class="card-title">Year of production: @item.Year</h5>
                         <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
-                        <p class="card-text">Max Speed: @item.Engine.HP</p>
-                        <a href="#" class="btn btn-primary">Make Main</a>
+                        <p class="card-text">Horse Power: @item.Engine.HP</p>
+                        <p class="card-text">Upgrade Bonus: @item.Parts.Sum(x => x.BonusPoints)</p>
+                        <a asp-controller="Garage" asp-action="Main" asp-route-id="@item.Id" class="btn btn-primary">Make Main</a>
                         <a asp-controller="Upgrade" asp-action="Car" asp-route-id="@item.Id" class="btn btn-warning">Upgrade</a>
                         <a asp-controller="Shop" asp-action="Sell" asp-route-id="@item.Id" class="btn btn-danger">Sell</a>
                     </div>

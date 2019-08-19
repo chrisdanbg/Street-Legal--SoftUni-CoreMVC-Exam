@@ -36,7 +36,7 @@ namespace StreetLegal.Services
 
             foreach (var car in currentGarage.Cars)
             {
-                var carToAdd = await this.context.Cars.Where(c => c.Id == car.Id).Include(c => c.Engine).FirstOrDefaultAsync();
+                var carToAdd = await this.context.Cars.Where(c => c.Id == car.Id).Include(c => c.Engine).Include(c=>c.Parts).FirstOrDefaultAsync();
 
                 if (carToAdd == null)
                 {

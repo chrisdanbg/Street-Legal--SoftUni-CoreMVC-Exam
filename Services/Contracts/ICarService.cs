@@ -19,5 +19,6 @@ namespace StreetLegal.Services.Contracts
         Car GetStartingCar();
         Task<Car> GetCarById(int carId);
         Task<Car> GetCarByMaxSpeed(int rivalMaxSpeed);
+        Task<bool> CreateNewPart(CreatePartVM createPartVM);
     }
 }

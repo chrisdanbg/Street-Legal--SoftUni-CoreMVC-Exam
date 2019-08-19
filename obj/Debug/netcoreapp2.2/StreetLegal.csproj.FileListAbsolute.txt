@@ -96,3 +96,6 @@ C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreap
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\StreetLegal.csprojAssemblyReference.cache
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Garage\Index.g.cshtml.cs
 C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Index.g.cshtml.cs
+C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Parts\Create.g.cshtml.cs
+C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Upgrade\Index.g.cshtml.cs
+C:\Users\applynx2\Desktop\Street-Legal--SoftUni-CoreMVC-Exam\obj\Debug\netcoreapp2.2\Razor\Views\Upgrade\Car.g.cshtml.cs

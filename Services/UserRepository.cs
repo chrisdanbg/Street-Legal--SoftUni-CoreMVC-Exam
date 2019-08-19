@@ -29,6 +29,8 @@ namespace StreetLegal.Services
             var userToGetDriverFrom = this.context.Users.Include(u => u.Driver).ThenInclude(d => d.Garage)
                 .Include(u => u.Driver)
                 .ThenInclude(d => d.MainCar)
+                .Include(u => u.Driver)
+                .ThenInclude(u => u.Parts)
                 .FirstOrDefault(u => u.Id == user.Id);
 
             var cars = this.garageRepository.GetCarsForUser(user).GetAwaiter().GetResult();
@@ -136,9 +138,33 @@ namespace StreetLegal.Services
 
         public bool HasMainCar(ApplicationUser currentUser)
         {
-            return GetDriverProfile(currentUser).Driver.MainCar == null;
+            return GetDriverProfile(currentUser).Driver.MainCar != null;
         }
 
-     
+        public async Task<bool> AssingnMainCar(ApplicationUser currentUser, int id)
+        {
+            var carToAssign = this.context.Cars.FirstOrDefault(c => c.Id == id);
+
+            if (carToAssign == null)
+            {
+                return false;
+            }
+
+            var driver = GetDriverProfile(currentUser).Driver;
+
+            driver.MainCar = carToAssign;
+
+            currentUser.Driver = driver;
+
+            this.context.Update(currentUser);
+
+            if (await this.context.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
     }
 }
