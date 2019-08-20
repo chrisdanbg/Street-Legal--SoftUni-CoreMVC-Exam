@@ -6,11 +6,6 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Migrations\20190814142711_fixedAppUser.cs" />
-    <Compile Remove="Migrations\20190814142711_fixedAppUser.Designer.cs" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" />
@@ -26,16 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\CarModels\" />
-    <Folder Include="Models\Enums\" />
-    <Folder Include="Areas\Admin\Views\Admin\" />
-    <Folder Include="Areas\Admin\Views\Engine\" />
-    <Folder Include="ViewModels\RaceViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Areas\Admin\Views\Shared\_Layout.cshtml">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <ProjectReference Include="..\StreetLegal.Data\StreetLegal.Data.csproj" />
+    <ProjectReference Include="..\StreetLegal.Services\StreetLegal.Services.csproj" />
   </ItemGroup>
 </Project>

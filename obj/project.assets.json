@@ -4905,6 +4905,44 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "StreetLegal.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/StreetLegal.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StreetLegal.Data.dll": {}
+        }
+      },
+      "StreetLegal.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "AutoMapper": "8.1.1",
+          "StreetLegal.Data": "1.0.0",
+          "StreetLegal.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StreetLegal.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StreetLegal.Services.dll": {}
+        }
+      },
+      "StreetLegal.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "StreetLegal.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StreetLegal.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StreetLegal.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -7726,7 +7764,6 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -8298,8 +8335,9 @@
       "path": "newtonsoft.json/11.0.2",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.md",
+        "Newtonsoft.Json.11.0.2.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -8317,9 +8355,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml"
       ]
     },
     "Newtonsoft.Json.Bson/1.0.1": {
@@ -8328,7 +8364,6 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "lib/net45/Newtonsoft.Json.Bson.dll",
         "lib/net45/Newtonsoft.Json.Bson.xml",
         "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
@@ -8420,6 +8455,7 @@
       "path": "runtime.native.system/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -9036,6 +9072,7 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9529,6 +9566,8 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
+        "System.Diagnostics.DiagnosticSource.4.5.0.nupkg.sha512",
+        "System.Diagnostics.DiagnosticSource.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net45/System.Diagnostics.DiagnosticSource.dll",
         "lib/net45/System.Diagnostics.DiagnosticSource.xml",
@@ -9540,8 +9579,6 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -9552,6 +9589,7 @@
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10579,7 +10617,6 @@
       "path": "system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -10873,6 +10910,7 @@
       "path": "system.private.datacontractserialization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.3/System.Private.DataContractSerialization.dll",
@@ -10968,6 +11006,7 @@
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11003,6 +11042,7 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11821,6 +11861,7 @@
       "path": "system.runtime.serialization.xml/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12321,6 +12362,7 @@
       "path": "system.security.principal/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12960,6 +13002,7 @@
       "path": "system.threading.thread/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13263,6 +13306,7 @@
       "path": "system.xml.xpath/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13332,6 +13376,21 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "StreetLegal.Data/1.0.0": {
+      "type": "project",
+      "path": "../StreetLegal.Data/StreetLegal.Data.csproj",
+      "msbuildProject": "../StreetLegal.Data/StreetLegal.Data.csproj"
+    },
+    "StreetLegal.Services/1.0.0": {
+      "type": "project",
+      "path": "../StreetLegal.Services/StreetLegal.Services.csproj",
+      "msbuildProject": "../StreetLegal.Services/StreetLegal.Services.csproj"
+    },
+    "StreetLegal.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../StreetLegal.ViewModels/StreetLegal.ViewModels.csproj",
+      "msbuildProject": "../StreetLegal.ViewModels/StreetLegal.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13342,7 +13401,9 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.2.4",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
+      "StreetLegal.Data >= 1.0.0",
+      "StreetLegal.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13381,7 +13442,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\applynx2\\Desktop\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+              "projectPath": "C:\\Users\\applynx2\\Desktop\\StreetLegal.Data\\StreetLegal.Data.csproj"
+            },
+            "C:\\Users\\applynx2\\Desktop\\StreetLegal.Services\\StreetLegal.Services.csproj": {
+              "projectPath": "C:\\Users\\applynx2\\Desktop\\StreetLegal.Services\\StreetLegal.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

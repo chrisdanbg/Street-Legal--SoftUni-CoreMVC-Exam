@@ -1,0 +1,233 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Services\\StreetLegal.Services.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj",
+        "projectName": "StreetLegal.Data",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj",
+        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Services\\StreetLegal.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Services\\StreetLegal.Services.csproj",
+        "projectName": "StreetLegal.Services",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Services\\StreetLegal.Services.csproj",
+        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+                "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj"
+              },
+              "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
+        "projectName": "StreetLegal.ViewModels",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+                "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
