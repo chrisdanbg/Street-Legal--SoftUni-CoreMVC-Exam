@@ -11,8 +11,6 @@ namespace StreetLegal.Models
 
         public int BonusPoints { get; set; }
 
-        public ICollection<Car> Cars { get; set; }
-
         public int Price { get; set; }
     }
 }

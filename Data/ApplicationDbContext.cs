@@ -29,5 +29,6 @@ namespace StreetLegal.Data
         public DbSet<Part> Parts { get; set; }
 
         public DbSet<Garage> Garages { get; set; }
+
     }
 }
