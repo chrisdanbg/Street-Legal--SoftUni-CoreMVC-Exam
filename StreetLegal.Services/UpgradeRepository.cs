@@ -54,7 +54,6 @@ namespace StreetLegal.Services
         {
             var car = await this.context.Cars.Where(c => c.Id == id).Include(c => c.Parts).FirstOrDefaultAsync();
            
-
             var driver = this.userRepository.GetDriverProfile(currentUser).Driver;
 
             var part = driver.Parts.FirstOrDefault(p => p.Id == partid);

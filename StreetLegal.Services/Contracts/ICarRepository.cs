@@ -11,6 +11,7 @@ namespace StreetLegal.Services.Contracts
         Task<bool> CreateNewEngine(CreateEngineVM createEngine);
         AdminIndexVM PopulateAdminIndexVM();
         ICollection<Engine> GetAllEngines();
+        ICollection<Car> GetAllCars();
         Task<bool> CreateNewTyres(CreateTyresVM createTyres);
         ICollection<Tyres> GetAllTyres();
         Car GetStartingCar();

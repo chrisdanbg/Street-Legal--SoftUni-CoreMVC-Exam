@@ -38,11 +38,6 @@ namespace StreetLegal.Services
             {
                 var carToAdd = await this.context.Cars.Where(c => c.Id == car.Id).Include(c => c.Engine).Include(c=>c.Parts).FirstOrDefaultAsync();
 
-                if (carToAdd == null)
-                {
-                    continue;
-                }
-
                 cars.Add(carToAdd);
             }
 

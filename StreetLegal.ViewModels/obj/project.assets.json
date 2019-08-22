@@ -12109,11 +12109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
       "projectName": "StreetLegal.ViewModels",
-      "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
+      "projectPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
       "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12139,8 +12139,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
-              "projectPath": "C:\\Users\\applynx2\\Desktop\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj"
+            "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+              "projectPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj"
             }
           }
         }

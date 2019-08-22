@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreetLegal.ViewModels", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreetLegal.Web", "StreetLegal.Web\StreetLegal.Web.csproj", "{ECC4F6F7-F118-48AF-85E2-C42157EEFBB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetLegal.Tests", "StreetLegal.Tests\StreetLegal.Tests.csproj", "{A9F27E02-1E7C-4914-B869-B6B8369F0114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{ECC4F6F7-F118-48AF-85E2-C42157EEFBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC4F6F7-F118-48AF-85E2-C42157EEFBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC4F6F7-F118-48AF-85E2-C42157EEFBB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F27E02-1E7C-4914-B869-B6B8369F0114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F27E02-1E7C-4914-B869-B6B8369F0114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F27E02-1E7C-4914-B869-B6B8369F0114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F27E02-1E7C-4914-B869-B6B8369F0114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

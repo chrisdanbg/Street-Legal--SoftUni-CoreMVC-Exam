@@ -24,16 +24,8 @@ namespace StreetLegal.Services
             int currentUserCarId = currentDriver.Driver.MainCar.Id;
 
             Car userCar = await this.carRepository.GetCarById(currentUserCarId);
-            if (userCar == null)
-            {
-                return false;
-            }
 
             Driver rival = await GenerateRival(currentDriver.Driver, userCar);
-            if (rival == null)
-            {
-                return false;
-            }
 
             return RaceDrivers(currentDriver.Driver, rival);
         }
