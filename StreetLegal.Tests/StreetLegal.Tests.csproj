@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StreetLegal.Data\StreetLegal.Data.csproj" />
     <ProjectReference Include="..\StreetLegal.Services\StreetLegal.Services.csproj" />
+    <ProjectReference Include="..\StreetLegal.Web\StreetLegal.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

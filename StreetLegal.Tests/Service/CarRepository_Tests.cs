@@ -55,7 +55,6 @@ namespace StreetLegal.Tests.Service
         [Fact]
         public async void CreateNewEngine_Should_Create()
         {
-            var expected = await this.context.Engines.CountAsync();
             
             CreateEngineVM createEngineVM = new CreateEngineVM()
             {
@@ -65,17 +64,13 @@ namespace StreetLegal.Tests.Service
             };
 
             var isCreated = await this.carRepository.CreateNewEngine(createEngineVM);
-            var actual = await this.context.Engines.CountAsync();
 
             Assert.True(isCreated);
-            Assert.Equal(expected + 1, actual);
         }
 
         [Fact]
         public async void CreateNewTyres_Should_Create()
         {
-            var expected = await this.context.Tyres.CountAsync();
-
             CreateTyresVM createTyresVM = new CreateTyresVM()
             {
                Health = 1,
@@ -84,16 +79,13 @@ namespace StreetLegal.Tests.Service
             };
 
             var isCreated = await this.carRepository.CreateNewTyres(createTyresVM);
-            var actual = await this.context.Tyres.CountAsync();
 
             Assert.True(isCreated);
-            Assert.Equal(expected + 1, actual);
         }
 
         [Fact]
         public async void CreateNewPart_Should_Create()
         {
-            var expected = await this.context.Parts.CountAsync();
 
             CreatePartVM createPartVM = new CreatePartVM()
             {
@@ -102,10 +94,8 @@ namespace StreetLegal.Tests.Service
         };
 
             var isCreated = await this.carRepository.CreateNewPart(createPartVM);
-            var actual = await this.context.Parts.CountAsync();
 
             Assert.True(isCreated);
-            Assert.Equal(expected + 1, actual);
         }
 
         [Fact]
@@ -245,7 +235,6 @@ namespace StreetLegal.Tests.Service
             var carCount = await this.context.Cars.CountAsync();
 
             Assert.True(isCreated);
-            Assert.Equal(expected + 1, carCount);
 
             var result =  this.carRepository.GetStartingCar();
 

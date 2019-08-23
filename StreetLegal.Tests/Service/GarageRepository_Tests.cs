@@ -7,9 +7,7 @@ using StreetLegal.Models.CarModels;
 using StreetLegal.Services;
 using StreetLegal.Services.Contracts;
 using StreetLegal.ViewModels.AdminViewModels;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
