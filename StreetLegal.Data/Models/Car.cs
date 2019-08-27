@@ -5,19 +5,21 @@ namespace StreetLegal.Models.CarModels
 {
     public class Car
     {
-            public int Id { get; set; }
+        public int Id { get; set; }
 
-            public string Make { get; set; }
+        public string Make { get; set; }
 
-            public int Year { get; set; }
+        public int Year { get; set; }
 
-            public Engine Engine { get; set;}
+        public Engine Engine { get; set; }
 
-            public Tyres Tyres { get; set; }
+        public Tyres Tyres { get; set; }
 
-            public int Value { get; set; }
-            
-            public ICollection<Part> Parts { get; set; }
+        public int Value { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        public ICollection<Part> Parts { get; set; }
 
     }
 }

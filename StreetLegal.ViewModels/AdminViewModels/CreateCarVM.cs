@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 using StreetLegal.Models.CarModels;
 
 namespace StreetLegal.ViewModels.AdminViewModels
@@ -18,5 +19,7 @@ namespace StreetLegal.ViewModels.AdminViewModels
         public int TyresId { get; set; }
         
         public int Value { get; set; }
+
+        public IFormFile Image { get; set; }
     }
 }

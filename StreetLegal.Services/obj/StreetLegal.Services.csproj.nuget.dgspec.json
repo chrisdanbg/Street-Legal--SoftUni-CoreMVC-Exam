@@ -129,6 +129,10 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -145,6 +149,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.5.1, )"
             }
           },
           "imports": [

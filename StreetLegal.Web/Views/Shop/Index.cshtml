@@ -9,35 +9,39 @@
 </div>
 
 <div class="container">
-    <h5>Available to purchase:</h5>
+    <h5 class="mb-5 display-4">Available to purchase:</h5>
     <div class="row">
         @foreach (var item in Model.CarsToPurchase.Cars)
         {
-            <div class="card mr-2" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Make</h5>
-                    <h5 class="card-title">Year of production: @item.Year</h5>
-                    <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
-                    <p class="card-text">Max Speed: @item.Engine.HP</p>
-                    <a asp-controller="Shop" asp-action="Purchase" asp-route-id="@item.Id" class="btn btn-danger">Purchase</a>
-                </div>
+        <div class="card mr-2" style="width: 20rem;">
+            <img class="card-img-top" src="@item.ImageUrl">
+            <div class="card-body">
+                <h5 class="card-title">Make: <span class="font-weight-bold">@item.Make</span> </h5>
+                <h5 class="card-title">Year of production: <span class="font-weight-bold"> @item.Year </span></h5>
+                <hr />
+                <p class="card-text">Max Speed: @item.Engine.MaxSpeed km/h</p>
+                <p class="card-text">Power: @item.Engine.HP HP</p>
+                <a asp-controller="Shop" asp-action="Purchase" asp-route-id="@item.Id" class="btn btn-danger">Purchase</a>
             </div>
+        </div>
         }
     </div>
     <hr />
-    <h5>Already purchased</h5>
+    <h5 class="mb-5 display-4">Already purchased</h5>
     <div class="row">
         @foreach (var item in Model.CarsOwned.OwnedCars)
         {
-            <div class="card mr-2" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Make</h5>
-                    <h5 class="card-title">Year of production: @item.Year</h5>
-                    <p class="card-text">Max Speed: @item.Engine.MaxSpeed</p>
-                    <p class="card-text">Max Speed: @item.Engine.HP</p>
-                    <a asp-controller="Upgrade" asp-action="Car" asp-route-id="@item.Id" class="btn btn-warning">Upgrade</a>
-                </div>
+        <div class="card mr-2" style="width: 20rem;">
+            <img class="card-img-top" src="@item.ImageUrl">
+            <div class="card-body">
+                <h5 class="card-title">Make: <span class="font-weight-bold">@item.Make</span> </h5>
+                <h5 class="card-title">Year of production: <span class="font-weight-bold"> @item.Year </span></h5>
+                <hr />
+                <p class="card-text">Max Speed: @item.Engine.MaxSpeed km/h</p>
+                <p class="card-text">Power: @item.Engine.HP HP</p>
+                <a asp-controller="Upgrade" asp-action="Car" asp-route-id="@item.Id" class="btn btn-warning">Upgrade</a>
             </div>
+        </div>
         }
     </div>
 </div>

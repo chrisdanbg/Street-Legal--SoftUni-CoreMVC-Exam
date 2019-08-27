@@ -36,7 +36,9 @@ namespace StreetLegal.Services
             var cars = this.garageRepository.GetCarsForUser(user).GetAwaiter().GetResult();
 
             Driver driverToReturn = userToGetDriverFrom.Driver;
-            driverToReturn.Garage.Cars = cars;
+
+            if (cars.Count != 0)
+                driverToReturn.Garage.Cars = cars;
 
             return new HomeIndexVM()
             {

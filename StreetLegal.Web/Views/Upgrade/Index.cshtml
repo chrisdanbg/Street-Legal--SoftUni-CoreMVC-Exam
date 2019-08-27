@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-    <h5>Available to purchase:</h5>
+    <h5 class="mb-5 display-4">Available to purchase:</h5>
     <div class="row">
         @foreach (var item in Model.PartsAvailable)
         {
@@ -24,7 +24,7 @@
         }
     </div>
     <hr />
-    <h5>Already purchased</h5>
+    <h5 class="mb-5 display-4">Already purchased:</h5>
     <div class="row">
         @foreach (var item in Model.PartsOwned)
         {

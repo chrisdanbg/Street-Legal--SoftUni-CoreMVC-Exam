@@ -34,6 +34,14 @@ namespace StreetLegal.Services
 
             List<Car> cars = new List<Car>();
 
+            if(currentGarage == null)
+            {
+                currentGarage = new Garage()
+                {
+                    Cars = new List<Car>()
+                };
+            }
+
             foreach (var car in currentGarage.Cars)
             {
                 var carToAdd = await this.context.Cars.Where(c => c.Id == car.Id).Include(c => c.Engine).Include(c=>c.Parts).FirstOrDefaultAsync();

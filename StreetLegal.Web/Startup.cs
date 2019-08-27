@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -50,10 +48,15 @@ namespace StreetLegal
             services.AddTransient<IGarageRepository, GarageRepository>();
             services.AddTransient<IShopRepository, ShopRepository>();
             services.AddTransient<IUpgradeRepository, UpgradeRepository>();
+            services.AddTransient<IPhotoRepository, PhotoRepository>();
+
+            string dbConnectionString = Configuration.GetConnectionString("DefaultConnectionWin");
+            string assemblyName = typeof(ApplicationDbContext).Namespace;
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnectionWin")));
+               options.UseSqlServer(dbConnectionString,
+                    optionsBuilder =>
+                        optionsBuilder.MigrationsAssembly("StreetLegal.Web")));
 
             services.AddDefaultIdentity<ApplicationUser>()
                .AddDefaultUI(UIFramework.Bootstrap4)
@@ -132,7 +135,7 @@ namespace StreetLegal
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-                });
+            });
 
             CreateUserRoles(services).Wait();
         }
