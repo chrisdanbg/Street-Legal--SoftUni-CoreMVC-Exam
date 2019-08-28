@@ -158,6 +158,21 @@ namespace StreetLegal.Services
         public async Task<bool> CreateNewPart(CreatePartVM createPartVM)
         {
             var partToCreate = this.mapper.Map<Part>(createPartVM);
+            IFormFile partImage = createPartVM.Image;
+
+            if (!FileIsValidImage(partImage))
+            {
+                return false;
+            }
+
+            var imageUrl = await this.photoRepository.UploadImageToStorage(partImage);
+
+            if (imageUrl == null)
+            {
+                return false;
+            }
+
+            partToCreate.ImageUrl = imageUrl;
 
             await this.context.AddAsync(partToCreate);
 

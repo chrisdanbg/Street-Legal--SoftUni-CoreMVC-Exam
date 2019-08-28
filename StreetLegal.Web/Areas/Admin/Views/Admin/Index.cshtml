@@ -4,35 +4,94 @@
     ViewData["Title"] = "Admin Panel";
 }
 
-<h1>This is admin page</h1>
+<h1 class="display-3">Admin Panel</h1>
+
+<ul class="admin-create-buttons list-inline">
+    <li class="list-inline-item">
+        <a class="btn btn-info" asp-action="Create" asp-controller="Car" asp-area="Admin">Create Car</a>
+    </li>
+    <li class="list-inline-item">
+        <a class="btn btn-danger" asp-action="Create" asp-controller="Engine" asp-area="Admin">Create Engine</a>
+    </li>
+    <li class="list-inline-item">
+        <a class="btn btn-danger" asp-action="Create" asp-controller="Tyres" asp-area="Admin">Create Tyres</a>
+    </li>
+    <li class="list-inline-item">
+        <a class="btn btn-warning" asp-action="Create" asp-controller="Parts" asp-area="Admin">Create Parts</a>
+    </li>
+</ul>
 
 
-<a asp-action="Create" asp-controller="Car" asp-area="Admin"><h1>Create Car</h1></a>
-<a asp-action="Create" asp-controller="Engine" asp-area="Admin"><h1>Create Engine</h1></a>
-<a asp-action="Create" asp-controller="Tyres" asp-area="Admin"><h1>Create Tyres</h1></a>
-<a asp-action="Create" asp-controller="Parts" asp-area="Admin"><h1>Create Parts</h1></a>
 
 
-<h1>Cars</h1>
-@foreach (var car in Model.Cars)
-{
-    <h5>@car.Make | @car.Year | @car.Engine.MaxSpeed Km/H</h5>
-}
 
-<h1>Engines</h1>
-@foreach (var engine in Model.Engines)
-{
-    <h5>@engine.Name | @engine.HP | @engine.MaxSpeed</h5>
-}
 
-<h1>Tyres</h1>
-@foreach (var tyres in Model.Tyres)
-{
-    <h5>@tyres.Name | @tyres.Health | @tyres.tyreType</h5>
-}
+<h2 class="display-4">Cars <img class="admin-icon float-right" src="/svg/car.svg" /></h2>
+<table class="table mb-5">
+    <tr>
+        <th>Make</th>
+        <th>Year</th>
+        <th>Max Speed</th>
+    </tr>
+    @foreach (var car in Model.Cars)
+    {
+        <tr>
+            <td>@car.Make</td>
+            <td>@car.Year</td>
+            <td>@car.Engine.MaxSpeed Km/H</td>
+        </tr>
+    }
+</table>
 
-<h1>Parts</h1>
-@foreach (var tyres in Model.Parts)
-{
-    <h5>@tyres.Name | @tyres.BonusPoints</h5>
-}
+
+<h2 class="display-4">Engines <img class="admin-icon float-right" src="/svg/engine.svg" /></h2>
+<table class="table mb-5">
+    <tr>
+        <th>Name</th>
+        <th>HP</th>
+        <th>Max Speed</th>
+    </tr>
+    @foreach (var engine in Model.Engines)
+    {
+        <tr>
+            <td>@engine.Name</td>
+            <td>@engine.HP</td>
+            <td>@engine.MaxSpeed</td>
+        </tr>
+    }
+</table>
+
+
+<h2 class="display-4">Tyres <img class="admin-icon float-right" src="/svg/tyre.svg" /></h2>
+<table class="table mb-5">
+    <tr>
+        <th>Name</th>
+        <th>Health</th>
+        <th>Type</th>
+    </tr>
+    @foreach (var tyres in Model.Tyres)
+    {
+        <tr>
+            <td>@tyres.Name</td>
+            <td>@tyres.Health</td>
+            <td>@tyres.tyreType</td>
+        </tr>
+    }
+</table>
+
+
+<h2 class="display-4">Parts <img class="admin-icon float-right" src="/svg/part.svg" /></h2>
+<table class="table mb-5">
+    <tr>
+        <th>Name</th>
+        <th>Bonus Points</th>
+    </tr>
+    @foreach (var part in Model.Parts)
+    {
+        <tr>
+            <td>@part.Name</td>
+            <td>@part.BonusPoints</td>
+        </tr>
+    }
+
+</table>

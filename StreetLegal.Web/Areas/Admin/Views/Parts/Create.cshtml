@@ -5,10 +5,11 @@
 }
 
 <div class="text-center">
-    <h2 class="display-4">Create New Tyres</h2>
+    <h2 class="display-4">Create New Part</h2>
+    <img id="managePreview" class="manageImg" src="@(TempData["ImageUrl"] ?? "/images/notFound.png")" />
     <div class="text-left">
         <div class="text-left">
-            <form asp-action="Create">
+            <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Name" class="control-label">Name <span class="text-danger">*</span></label>
@@ -25,6 +26,11 @@
                     <input asp-for="Price" type="number" class="form-control" required />
                     <span asp-validation-for="BonusPoints" class="text-danger"></span>
                 </div>
+                <div class="form-group file-input">
+                    <input asp-for="Image" type='file' name="Image">
+                    <span class='button'>Choose</span>
+                    <span class='label' data-js-label>No file selected</label>
+                </div>
                 <div class="form-group mb-2">
                     <input type="submit" value="Create" class="btn btn-primary text-light float-left" />
                 </div>
@@ -33,3 +39,36 @@
         </div>
     </div>
 </div>
+
+<script>
+    var inputs = document.querySelectorAll('.file-input')
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+        customInput(inputs[i])
+    }
+
+    function customInput(el) {
+        const fileInput = el.querySelector('[type="file"]')
+        const label = el.querySelector('[data-js-label]')
+
+        fileInput.onchange =
+            fileInput.onmouseout = function () {
+                if (!fileInput.value) return
+
+                var value = fileInput.value.replace(/^.*[\\\/]/, '')
+                el.className += ' -chosen'
+                label.innerText = value
+            }
+    }
+
+    var files = document.querySelectorAll("input[type=file]");
+    files[0].addEventListener("change", function (e) {
+        console.log(e);
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("managePreview").setAttribute("src", e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });</script>

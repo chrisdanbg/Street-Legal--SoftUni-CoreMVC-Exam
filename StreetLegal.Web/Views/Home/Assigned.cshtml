@@ -4,12 +4,13 @@
     ViewData["Title"] = "Assigned";
 }
 
-    <div class="text-center">
-        <h1>Congratulations Driver</h1>
-        <p>You've been accepted into Street Legal League</p>
-        <p>Here Is Your Info:</p>
-        <p>@Model.Car.Make | @Model.Car.Year | @Model.Car.Engine.HP</p>
-
-        <a asp-action="Start" asp-controller="Race" class="btn btn-success">Let's Race</a>
+    <div class="text-center text-white pt-5">
+        <div class="section-card mt-5 p-5 rounded">
+            <h1 class="display-3">Congratulations Driver</h1>
+            <p class="lead">You've been accepted into Street Legal League</p>
+            <p class="lead">Here Is Your Info:</p>
+            <p class="lead">@Model.Car.Make | @Model.Car.Year | @Model.Car.Engine.HP</p>
+            <a asp-action="Start" asp-controller="Race" class="btn btn-success">Let's Race</a>
+        </div>
     </div>
 

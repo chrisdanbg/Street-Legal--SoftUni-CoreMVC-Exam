@@ -6,9 +6,10 @@
 
 <div class="text-center">
     <h2 class="display-4">Create New Car</h2>
+    <img id="managePreview" class="manageImg" src="@(TempData["ImageUrl"] ?? "/images/notFound.png")" />
     <div class="text-left">
         <div class="text-left">
-            <form asp-action="Create" asp-controller="Admin"  enctype="multipart/form-data">
+            <form asp-action="Create" asp-controller="Admin" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Make" class="control-label">Make <span class="text-danger">*</span></label>
@@ -52,10 +53,6 @@
 </div>
 
 <script>
-    $("#AddImageForm").submit(function (e) {
-        ShowSpinner();
-    });
-
     var inputs = document.querySelectorAll('.file-input')
 
     for (var i = 0, len = inputs.length; i < len; i++) {
@@ -75,4 +72,16 @@
                 label.innerText = value
             }
     }
+
+    var files = document.querySelectorAll("input[type=file]");
+    files[0].addEventListener("change", function (e) {
+        console.log(e);
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("managePreview").setAttribute("src", e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
 </script>
