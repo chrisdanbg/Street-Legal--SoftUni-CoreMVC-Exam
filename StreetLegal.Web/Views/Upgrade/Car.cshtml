@@ -3,38 +3,42 @@
     ViewData["Title"] = "Upgrade Car";
 }
 
-<div class="text-center mb-5">
-    <h1>Upgrade Car</h1>
-    <h5>Use your money to make your vehicle better and faster</h5>
+<div class="text-center pt-5 mb-5 text-white">
+    <h1 class="display-3">Upgrade Car</h1>
+    <h5 class="lead">Use your money to make your vehicle better and faster</h5>
 </div>
 
 <div class="container">
-    <h5 class="mb-5 display-4">Available to purchase:</h5>
+    <h5 class="mb-5 display-4 text-white">Available to purchase:</h5>
     <div class="row">
         @foreach (var item in Model.PartsAvailable)
         {
-            <div class="card mr-2" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <h5 class="card-title">Price @item.Price</h5>
-                    <p class="card-text">Bonus Points: @item.BonusPoints</p>
-                    <a asp-controller="Upgrade" asp-action="Install" asp-route-carId="@Model.CarId"  asp-route-partId="@item.Id" class="btn btn-danger">Install to Car</a>
-                </div>
+        <div class="card streetlegal-card mb-2 mr-2" style="width: 20rem;">
+            <img class="card-img-top" src="@item.ImageUrl">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h5 class="card-title">Price @item.Price$</h5>
+                <hr />
+                <p class="card-text lead">Bonus Points: @item.BonusPoints</p>
+                <a asp-controller="Upgrade" asp-action="Install" asp-route-carId="@Model.CarId" asp-route-partId="@item.Id" class="btn btn-danger">Install to Car</a>
             </div>
+        </div>
         }
     </div>
-    <hr />
-    <h5 class="mb-5 display-4">Already purchased:</h5>
+    <hr class="bg-white" />
+    <h5 class="mb-5 display-4 text-white">Already purchased:</h5>
     <div class="row">
         @foreach (var item in Model.PartsOwned)
         {
-            <div class="card mr-2" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <h5 class="card-title">Price @item.Price</h5>
-                    <p class="card-text">Bonus Points: @item.BonusPoints</p>
-                </div>
+        <div class="card streetlegal-card mb-2 mr-2" style="width: 20rem;">
+            <img class="card-img-top" src="@item.ImageUrl">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h5 class="card-title lead font-weight-bold">Price @item.Price$</h5>
+                <hr />
+                <p class="card-text lead">Bonus Points: @item.BonusPoints</p>
             </div>
+        </div>
         }
     </div>
 </div>

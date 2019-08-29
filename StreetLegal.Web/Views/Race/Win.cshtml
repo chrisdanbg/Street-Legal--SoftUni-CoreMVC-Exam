@@ -3,12 +3,18 @@
 @{
     ViewData["Title"] = "Race Won";
 }
+<div class="pt-5">
+    <div class="section-card text-white pt-5">
+        <div class="login-section-img text-center pt-4">
+            <img src="~/svg/podium.svg" style="height: 100px;" />
+        </div>
+        <div class="text-center pb-5">
+            <h1 class="display-4">Congratulations! You've won!</h1>
+            <h2 class="lead">You've earned @Model.ExperienceEarned experience points</h2>
+            <h2 class="lead">You've added @Model.MoneyEarned$ to your account</h2>
 
-<div class="text-center">
-    <h1>Congratulations! You've won!</h1>
-    <h2>You've earned @Model.ExperienceEarned experience points</h2>
-    <h2>You've added @Model.MoneyEarned$ to your account</h2>
-
-    <a class="btn btn-primary" asp-action="Start">Race Again</a>
-    <a class="btn btn-danger" asp-action="Index" asp-controller="Home">Home</a>
+            <a class="btn btn-primary btn-lg mt-5" asp-action="Start">Race Again</a>
+            <a class="btn btn-danger  btn-lg mt-5" asp-action="Index" asp-controller="Home">Home</a>
+        </div>
+    </div>
 </div>

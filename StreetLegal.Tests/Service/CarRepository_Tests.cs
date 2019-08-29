@@ -28,6 +28,8 @@ namespace StreetLegal.Tests.Service
 
         private readonly ICarRepository carRepository;
 
+        private readonly IPhotoRepository photoRepository;
+
         private readonly MapperConfiguration config;
 
         public CarRepository_Tests()
@@ -49,8 +51,8 @@ namespace StreetLegal.Tests.Service
 
             this.mapper = config.CreateMapper();
             this.context = new ApplicationDbContext(options);
-
-            this.carRepository = new CarRepository(this.context, mapper);
+            this.photoRepository = new PhotoRepository();
+            this.carRepository = new CarRepository(this.context, mapper, this.photoRepository);
         }
         [Fact]
         public async void CreateNewEngine_Should_Create()

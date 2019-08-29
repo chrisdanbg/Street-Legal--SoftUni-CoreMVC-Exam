@@ -23,23 +23,29 @@ footer {
     background-color: #2E2947 !important;
 }
 
-.home-page {
+.bg-body {
     background: url('/images/home-page-image.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 100vw !important;
-    height: 87vh !important;
 }
 
 .section-card {
      background-color: #2E2947 !important;
 }
+
+.streetlegal-card {
+    transition: all 0.5s;
+}
+
+.streetlegal-card:hover {
+    transform: scale(1.1);
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {

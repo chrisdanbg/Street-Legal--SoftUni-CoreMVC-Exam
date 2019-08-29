@@ -36,7 +36,7 @@ namespace StreetLegal.Tests.Service
         private readonly ICarRepository carRepository;
         private readonly IUpgradeRepository upgradeRepository;
         private readonly MapperConfiguration config;
-
+        private readonly IPhotoRepository photoRepository;
         public UserRepository_Tests()
         {
             this.config = new MapperConfiguration(opts =>
@@ -61,7 +61,8 @@ namespace StreetLegal.Tests.Service
 
             this.garageRepository = new GarageRepository(this.context);
             this.userRepository = new UserRepository(this.context, this.garageRepository);
-            this.carRepository = new CarRepository(this.context, mapper);
+            this.photoRepository = new PhotoRepository();
+            this.carRepository = new CarRepository(this.context, mapper, this.photoRepository);
             this.driverRepository = new DriverRepository(this.context, this.userRepository, this.carRepository);
             this.raceRepository = new RaceRepository(this.userRepository, this.carRepository);
             this.upgradeRepository = new UpgradeRepository(this.context, this.userRepository);

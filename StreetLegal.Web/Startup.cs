@@ -50,7 +50,7 @@ namespace StreetLegal
             services.AddTransient<IUpgradeRepository, UpgradeRepository>();
             services.AddTransient<IPhotoRepository, PhotoRepository>();
 
-            string dbConnectionString = Configuration.GetConnectionString("DefaultConnectionMac");
+            string dbConnectionString = Configuration.GetConnectionString("DefaultConnectionWin");
             string assemblyName = typeof(ApplicationDbContext).Namespace;
 
             services.AddDbContext<ApplicationDbContext>(options =>

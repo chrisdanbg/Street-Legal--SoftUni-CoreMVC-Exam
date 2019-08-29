@@ -3,14 +3,19 @@
     ViewData["Title"] = "Start";
 }
 <div class="pt-5">
-    <div class="text-center section-card text-white p-5 rounded">
-        <h1 class="display-3">We found you new rival!</h1>
-        <h2 class="lead">Are you ready to prove yourself on the streets?</h2>
+    <div class="section-card text-white pt-5">
+        <div class="login-section-img text-center pt-4">
+            <img src="~/svg/drivers.svg" style="height: 200px;" />
+        </div>
+        <div class="text-center section-card text-white p-5 rounded">
+            <h1 class="display-4">We found you new rival!</h1>
+            <h2 class="lead">Are you ready to prove yourself on the streets?</h2>
 
-        <a class="btn btn-primary btn-lg mt-5" asp-action="Finish">Race</a>
-        <a class="btn btn-danger btn-lg mt-5" asp-action="Index" asp-controller="Home">Take Me Back</a>
+            <a class="btn btn-primary btn-lg mt-5" asp-action="Finish">Race</a>
+            <a class="btn btn-danger btn-lg mt-5" asp-action="Index" asp-controller="Home">Take Me Back</a>
+        </div>
+
     </div>
-
 </div>
 
 

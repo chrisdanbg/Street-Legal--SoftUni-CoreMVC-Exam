@@ -32,7 +32,7 @@ namespace StreetLegal.Tests.Service
         private readonly IGarageRepository garageRepository;
         private readonly IDriverRepository driverRepository;
         private readonly ICarRepository carRepository;
-
+        private readonly IPhotoRepository photoRepository;
         private readonly MapperConfiguration config;
 
         public DriverRepository_Tests()
@@ -59,7 +59,8 @@ namespace StreetLegal.Tests.Service
 
             this.garageRepository = new GarageRepository(this.context);
             this.userRepository = new UserRepository(this.context,this.garageRepository);
-            this.carRepository = new CarRepository(this.context, mapper);
+            this.photoRepository = new PhotoRepository();
+            this.carRepository = new CarRepository(this.context, mapper,this.photoRepository);
             this.driverRepository = new DriverRepository(this.context,this.userRepository,this.carRepository);
         }
 

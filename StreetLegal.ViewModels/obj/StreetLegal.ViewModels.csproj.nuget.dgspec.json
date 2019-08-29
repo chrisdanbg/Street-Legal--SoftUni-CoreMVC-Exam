@@ -1,28 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.ViewModels/StreetLegal.ViewModels.csproj": {}
+    "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj": {}
   },
   "projects": {
-    "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/StreetLegal.Data.csproj": {
+    "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/StreetLegal.Data.csproj",
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj",
         "projectName": "StreetLegal.Data",
-        "projectPath": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/StreetLegal.Data.csproj",
-        "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/obj/",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj",
+        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/macbook/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,32 +74,41 @@
         }
       }
     },
-    "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.ViewModels/StreetLegal.ViewModels.csproj": {
+    "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.ViewModels/StreetLegal.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
         "projectName": "StreetLegal.ViewModels",
-        "projectPath": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.ViewModels/StreetLegal.ViewModels.csproj",
-        "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.ViewModels/obj/",
+        "projectPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\StreetLegal.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\applynx2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/macbook/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\applynx2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/StreetLegal.Data.csproj": {
-                "projectPath": "/Users/macbook/Desktop/Street-Legal--SoftUni-CoreMVC-Exam/StreetLegal.Data/StreetLegal.Data.csproj"
+              "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj": {
+                "projectPath": "C:\\Users\\applynx2\\Desktop\\TestAuthApp1\\Street-Legal--SoftUni-CoreMVC-Exam\\StreetLegal.Data\\StreetLegal.Data.csproj"
               }
             }
           }

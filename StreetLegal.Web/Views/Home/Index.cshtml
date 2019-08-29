@@ -23,7 +23,7 @@
                     <h2 class="lead pt-2">Your garage has @(Model.Driver.Garage.Cars != null ? Model.Driver.Garage.Cars.Count : 0 ) cars in it</h2>
 
                     <a class="btn btn-lg btn-primary mt-5" asp-action="Start" asp-controller="Race">Race</a>
-                    <a class="btn btn-lg btn-warning mt-5" asp-action="Start" asp-controller="Race">Upgrade Car</a>
+                    <a class="btn btn-lg btn-warning mt-5" asp-action="Index" asp-controller="Upgrade">Upgrade Car</a>
                 </div>
 
             </div>

@@ -2,11 +2,19 @@
     ViewData["Title"] = "You Lost";
 }
 
-<div class="text-center">
-    <h1>You Lost!</h1>
-    <h2>Even the best racers make mistakes.</h2>
-    <h2>Keep improving yourself. Maybe it's time to upgrade your car?</h2>
 
-    <a class="btn btn-primary" asp-action="Start">Race Again</a>
-    <a class="btn btn-danger" asp-action="Index" asp-controller="Home">Home</a>
-</div>
+    <div class="pt-5">
+        <div class="section-card text-white pt-5">
+            <div class="login-section-img text-center pt-4">
+                <img src="~/svg/car-accident.svg" style="height: 100px;" />
+            </div>
+            <div class="text-center pb-5">
+                <h1 class="display-3">You Lost!</h1>
+                <h2 class="lead">Even the best racers make mistakes.</h2>
+                <h2 class="lead">Keep improving yourself. Maybe it's time to upgrade your car?</h2>
+
+                <a class="btn btn-primary btn-lg mt-5" asp-action="Start">Race Again</a>
+                <a class="btn btn-danger btn-lg mt-5" asp-action="Index" asp-controller="Home">Home</a>
+            </div>
+        </div>
+    </div>
