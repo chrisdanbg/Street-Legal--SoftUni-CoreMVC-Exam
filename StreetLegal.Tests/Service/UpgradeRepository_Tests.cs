@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using StreetLegal.Data;
@@ -10,6 +12,7 @@ using StreetLegal.ViewModels.AdminViewModels;
 using StreetLegal.ViewModels.UpgradeViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,8 +93,11 @@ namespace StreetLegal.Tests.Service
             {
                 BonusPoints = 100,
                 Name = "test",
-                Price = 10
+                Price = 10,
+                ImageUrl = "testUrl"
             };
+
+
 
             await this.context.AddAsync(part);
 
@@ -154,7 +160,8 @@ namespace StreetLegal.Tests.Service
             {
                 BonusPoints = 100,
                 Name = "test",
-                Price = 10
+                Price = 10,
+                ImageUrl = "testUrl"
             };
 
             await this.context.AddAsync(part);
@@ -218,7 +225,8 @@ namespace StreetLegal.Tests.Service
             {
                 BonusPoints = 100,
                 Name = "test",
-                Price = 10
+                Price = 10,
+                ImageUrl = "testUrl"
             };
 
             await this.context.AddAsync(part);
@@ -282,7 +290,8 @@ namespace StreetLegal.Tests.Service
             {
                 BonusPoints = 100,
                 Name = "test",
-                Price = 10
+                Price = 10,
+                ImageUrl = "testUrl"
             };
 
             await this.context.AddAsync(part);
@@ -348,16 +357,33 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
-            {
-                EngineId = engine.Id,
-                TyresId = tyre.Id,
-                Make = "testa",
-                Value = 1234,
-                Year = 1990
-            };
+            CreateCarVM car = new CreateCarVM();
 
-            return createCarVM;
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
+            {
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
+
+
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                car = createCarVM;
+            }
+
+            return car;
         }
 
         private async Task<CreateCarVM> CreateCar2()
@@ -385,16 +411,33 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
-            {
-                EngineId = engine.Id,
-                TyresId = tyre.Id,
-                Make = "testa",
-                Value = 14,
-                Year = 1900
-            };
+            CreateCarVM car = new CreateCarVM();
 
-            return createCarVM;
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
+            {
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
+
+
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                car = createCarVM;
+            }
+
+            return car;
         }
     }
 }

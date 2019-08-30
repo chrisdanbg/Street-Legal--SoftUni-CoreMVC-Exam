@@ -39,3 +39,4 @@ C:\Users\applynx2\Desktop\TestAuthApp1\Street-Legal--SoftUni-CoreMVC-Exam\Street
 C:\Users\applynx2\Desktop\TestAuthApp1\Street-Legal--SoftUni-CoreMVC-Exam\StreetLegal.Data\obj\Debug\netcoreapp2.2\StreetLegal.Data.RazorTargetAssemblyInfo.cache
 C:\Users\applynx2\Desktop\TestAuthApp1\Street-Legal--SoftUni-CoreMVC-Exam\StreetLegal.Data\obj\Debug\netcoreapp2.2\StreetLegal.Data.dll
 C:\Users\applynx2\Desktop\TestAuthApp1\Street-Legal--SoftUni-CoreMVC-Exam\StreetLegal.Data\obj\Debug\netcoreapp2.2\StreetLegal.Data.pdb
+C:\Users\applynx2\Desktop\TestAuthApp1\Street-Legal--SoftUni-CoreMVC-Exam\StreetLegal.Data\obj\Debug\netcoreapp2.2\StreetLegal.Data.csprojAssemblyReference.cache

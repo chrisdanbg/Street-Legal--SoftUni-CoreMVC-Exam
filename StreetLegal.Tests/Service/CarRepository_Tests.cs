@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Moq;
@@ -10,6 +12,8 @@ using StreetLegal.Services.Contracts;
 using StreetLegal.ViewModels.AdminViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using Xunit;
 
 namespace StreetLegal.Tests.Service
@@ -89,15 +93,29 @@ namespace StreetLegal.Tests.Service
         public async void CreateNewPart_Should_Create()
         {
 
-            CreatePartVM createPartVM = new CreatePartVM()
+
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
             {
-                BonusPoints = 100,
-                Price = 2
-        };
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
 
-            var isCreated = await this.carRepository.CreateNewPart(createPartVM);
 
-            Assert.True(isCreated);
+
+                CreatePartVM createPartVM = new CreatePartVM()
+                {
+                    BonusPoints = 100,
+                    Price = 2,
+                    Image = file
+                };
+
+                var isCreated = await this.carRepository.CreateNewPart(createPartVM);
+
+                Assert.True(isCreated);
+
+            }
         }
 
         [Fact]
@@ -128,18 +146,31 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
             {
-               EngineId = engine.Id,
-               TyresId = tyre.Id,
-               Make = "testa",
-               Value = 1234,
-               Year = 1990
-            };
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
 
-            var isCreated = await this.carRepository.CreateNewCar(createCarVM);
 
-            Assert.True(isCreated);
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                Assert.True(isCreated);
+
+            }
         }
 
         [Fact]
@@ -224,19 +255,31 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
             {
-                EngineId = engine.Id,
-                TyresId = tyre.Id,
-                Make = "testa",
-                Value = 1234,
-                Year = 1990
-            };
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
 
-            var isCreated = await this.carRepository.CreateNewCar(createCarVM);
-            var carCount = await this.context.Cars.CountAsync();
 
-            Assert.True(isCreated);
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                Assert.True(isCreated);
+
+            }
 
             var result =  this.carRepository.GetStartingCar();
 
@@ -271,19 +314,31 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
             {
-                EngineId = engine.Id,
-                TyresId = tyre.Id,
-                Make = "testa",
-                Value = 1234,
-                Year = 1990
-            };
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
 
-            var isCreated = await this.carRepository.CreateNewCar(createCarVM);
-            var carCount = await this.context.Cars.CountAsync();
 
-            Assert.True(isCreated);
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                Assert.True(isCreated);
+
+            }
 
             var car = await this.context.Cars.FirstOrDefaultAsync();
 
@@ -320,19 +375,31 @@ namespace StreetLegal.Tests.Service
             Assert.True(tyresCreated);
             var tyre = await this.context.Tyres.FirstOrDefaultAsync();
 
-            CreateCarVM createCarVM = new CreateCarVM()
+            using (var stream = File.OpenRead(@"../../../image.jpg"))
             {
-                EngineId = engine.Id,
-                TyresId = tyre.Id,
-                Make = "testa",
-                Value = 1234,
-                Year = 1990
-            };
+                var file = new FormFile(stream, 0, stream.Length, "Name", Path.GetFileName(@"../../../image.jpg"))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/jpeg",
+                };
 
-            var isCreated = await this.carRepository.CreateNewCar(createCarVM);
-            var carCount = await this.context.Cars.CountAsync();
 
-            Assert.True(isCreated);
+                CreateCarVM createCarVM = new CreateCarVM()
+                {
+                    EngineId = engine.Id,
+                    TyresId = tyre.Id,
+                    Make = "testa",
+                    Value = 1234,
+                    Year = 1990,
+                    Image = file
+
+                };
+
+                var isCreated = await this.carRepository.CreateNewCar(createCarVM);
+
+                Assert.True(isCreated);
+
+            }
 
             var result = await this.carRepository.GetCarByMaxSpeed(200);
 
