@@ -17,7 +17,8 @@ namespace StreetLegal.ViewModels.AdminViewModels
         public int EngineId { get; set; }
 
         public int TyresId { get; set; }
-        
+
+        [Required]
         public int Value { get; set; }
 
         public IFormFile Image { get; set; }

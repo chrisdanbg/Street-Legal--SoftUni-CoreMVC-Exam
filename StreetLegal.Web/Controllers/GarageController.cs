@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StreetLegal.Helpers;
@@ -8,6 +9,7 @@ using StreetLegal.ViewModels.GarageViewModels;
 
 namespace StreetLegal.Controllers
 {
+    [Authorize]
     public class GarageController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;
@@ -33,6 +35,11 @@ namespace StreetLegal.Controllers
             }
 
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+            if (!this.userRepository.IsAssigned(currentUser))
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
 
             GarageIndexVM garageIndexVM = await this.garageRepository.GetGarageForUser(currentUser);
 

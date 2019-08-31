@@ -16,12 +16,14 @@ namespace StreetLegal.Controllers
         private readonly IShopRepository shopRepository;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ErrorMessageHelper errorMessageHelper;
+        private readonly IUserRepository userRepository;
 
-        public ShopController(IShopRepository shopRepository, UserManager<ApplicationUser> userManager, ErrorMessageHelper errorMessageHelper)
+        public ShopController(IShopRepository shopRepository, UserManager<ApplicationUser> userManager, ErrorMessageHelper errorMessageHelper, IUserRepository userRepository)
         {
             this.shopRepository = shopRepository;
             this.userManager = userManager;
             this.errorMessageHelper = errorMessageHelper;
+            this.userRepository = userRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -34,6 +36,11 @@ namespace StreetLegal.Controllers
             }
 
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+            if (!this.userRepository.IsAssigned(currentUser))
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
 
             PurchasableCarsVM carsToPurchase = await this.shopRepository.GetAllPurchasableCars(currentUser);
             PurchasedCarsVM carsOwned = await this.shopRepository.GettAllOwnedCars(currentUser);

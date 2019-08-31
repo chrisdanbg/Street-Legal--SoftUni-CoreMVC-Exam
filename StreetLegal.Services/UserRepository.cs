@@ -167,6 +167,10 @@ namespace StreetLegal.Services
 
             return false;
         }
-        
+
+        public bool IsAssigned(ApplicationUser currentUser)
+        {
+            return GetDriverProfile(currentUser).Driver != null;
+        }
     }
 }

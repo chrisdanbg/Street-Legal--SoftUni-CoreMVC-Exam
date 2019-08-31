@@ -13,6 +13,7 @@ namespace StreetLegal.Services.Contracts
         Task<RaceWinVM> RewardUser(ApplicationUser user);
         int GetDriverLevel(ApplicationUser applicationUser);
         bool HasMainCar(ApplicationUser currentUser);
+        bool IsAssigned(ApplicationUser currentUser);
         Task<bool> AssingnMainCar(ApplicationUser currentUser, int id);
     }
 }

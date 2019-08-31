@@ -6,11 +6,13 @@
     <div class="container">
         @if (User.Identity.IsAuthenticated && Model.Driver == null)
         {
-            <div class="text-center pt-5">
+        <div class="pt-5">
+            <div class="section-card p-5 text-center">
                 <h1 class="display-3 text-white animated fadeInUpBig pt-5">Welcome to Street Legal</h1>
                 <p class="lead text-white animated fadeInUpBig slow">As a new driver you need a car. Whould you like to get a car now ?</p>
                 <a asp-action="Assign" class="btn btn-lg btn-primary animated fadeInUpBig slower">Give me a car!</a>
             </div>
+        </div>
         }
         else
         {

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StreetLegal.Helpers;
@@ -11,17 +9,20 @@ using StreetLegal.ViewModels.UpgradeViewModels;
 
 namespace StreetLegal.Controllers
 {
+    [Authorize]
     public class UpgradeController : Controller
     {
         private readonly IUpgradeRepository upgradeRepository;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ErrorMessageHelper errorMessageHelper;
+        private readonly IUserRepository userRepository;
 
-        public UpgradeController(IUpgradeRepository upgradeRepository, UserManager<ApplicationUser> userManager, ErrorMessageHelper errorMessageHelper)
+        public UpgradeController(IUpgradeRepository upgradeRepository, UserManager<ApplicationUser> userManager, ErrorMessageHelper errorMessageHelper, IUserRepository userRepository)
         {
             this.upgradeRepository = upgradeRepository;
             this.userManager = userManager;
             this.errorMessageHelper = errorMessageHelper;
+            this.userRepository = userRepository;
         }
         public async Task<IActionResult> Index()
         {
@@ -33,6 +34,12 @@ namespace StreetLegal.Controllers
             }
 
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+
+
+            if (!this.userRepository.IsAssigned(currentUser))
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
 
             PartsIndexVM viewModel = await this.upgradeRepository.GetPartsIndexVM(currentUser);
 

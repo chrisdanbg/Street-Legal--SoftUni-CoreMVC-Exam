@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StreetLegal.Models;
@@ -10,6 +8,7 @@ using StreetLegal.ViewModels.RaceViewModels;
 
 namespace StreetLegal.Controllers
 {
+    [Authorize]
     public class RaceController : Controller
     {
         private readonly IRaceRepository raceRepository;
@@ -35,6 +34,11 @@ namespace StreetLegal.Controllers
             var currentUser = await this.userManager.FindByNameAsync(HttpContext.User.Identity.Name);
 
             if (currentUser == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+
+            if (!this.userRepository.IsAssigned(currentUser))
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
